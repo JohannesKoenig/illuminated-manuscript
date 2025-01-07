@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://duaard6iebnvb"]
+
+[ext_resource type="PackedScene" uid="uid://djfae1eiopiwp" path="res://book/page.tscn" id="1_facur"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_blihr"]
+size = Vector3(5.31055, 0.206055, 3.95337)
+
+[node name="TestBench" type="Node3D"]
+
+[node name="Page" parent="." instance=ExtResource("1_facur")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.282426, 0.959289, 0, -0.959289, 0.282426, 0, 3.6306, 1.00672)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.154567, 0)
+shape = SubResource("BoxShape3D_blihr")
