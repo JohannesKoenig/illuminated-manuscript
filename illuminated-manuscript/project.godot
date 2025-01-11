@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Illuminated Manuscript"
-run/main_scene="res://scenes/test_bench.tscn"
+run/main_scene="res://scenes/test/test_bench.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -1,0 +1,1 @@
+class_name ContentElementEmpty2D extends Control

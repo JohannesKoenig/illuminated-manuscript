@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjc7jv1nnel1q"]
+
+[ext_resource type="Texture2D" uid="uid://b1r2ms52ld1xr" path="res://icon.svg" id="1_34cfu"]
+
+[node name="PageContent2d" type="SubViewport"]
+size = Vector2i(1024, 1618)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_34cfu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TextRig" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="TextRig"]
+offset_right = 189.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 36
+text = "Schloss 
+Vertikalschnipps"

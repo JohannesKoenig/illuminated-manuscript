@@ -1,0 +1,1 @@
+class_name ContentElementClocked2D extends Control

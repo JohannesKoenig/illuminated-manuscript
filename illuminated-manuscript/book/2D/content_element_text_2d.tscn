@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4roews4vuike"]
+
+[ext_resource type="Script" path="res://book/2D/content_element_text_2d.gd" id="1_h0qh2"]
+
+[node name="ContentElementText2D" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 200.0
+script = ExtResource("1_h0qh2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+autowrap_mode = 3

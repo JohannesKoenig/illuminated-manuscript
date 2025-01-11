@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvl5jmvlbf0nk"]
+
+[ext_resource type="Script" path="res://book/2D/content_element_texture_2d.gd" id="1_vbaj7"]
+
+[node name="ContentElementTexture2d" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 200.0
+script = ExtResource("1_vbaj7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+expand_mode = 2
