@@ -19,11 +19,11 @@ func _process(delta):
 	var _current_time = Time.get_unix_time_from_system()
 	var progress = _current_time - _start_time
 	var normalized_progress = progress / duration
-	#current_page.progress = clamp(1- normalized_progress, 0.01, 0.99)
-	#if progress > duration:
-		#_start_time = _current_time
-		#book.current_page += 2
-		#load_page(book.current_page)
+	current_page.progress = clamp(1- normalized_progress, 0.01, 0.99)
+	if progress > duration:
+		_start_time = _current_time
+		book.current_page += 2
+		load_page(book.current_page)
 
 func load_page(page_number: int):
 	assert(page_number > 0, "Page number has to be greater than 0.")
