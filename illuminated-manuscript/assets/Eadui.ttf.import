@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cev01vjl48oj0"
-path="res://.godot/imported/AlexBrush-Regular-OTF.otf-a6441f489df323d0572da842f063f1b5.fontdata"
+uid="uid://joxu1q0j8o0w"
+path="res://.godot/imported/Eadui.ttf-3fc45fb6db53fed1ec162b6c44a31ba2.fontdata"
 
 [deps]
 
-source_file="res://assets/AlexBrush-Regular-OTF.otf"
-dest_files=["res://.godot/imported/AlexBrush-Regular-OTF.otf-a6441f489df323d0572da842f063f1b5.fontdata"]
+source_file="res://assets/Eadui.ttf"
+dest_files=["res://.godot/imported/Eadui.ttf-3fc45fb6db53fed1ec162b6c44a31ba2.fontdata"]
 
 [params]
 
