@@ -1,6 +1,5 @@
 class_name Page extends Node3D
 
-@onready var dragging_interaction_area_3d = $DraggingInteractionArea3D
 @onready var left_side: MeshInstance3D = $PageRig/LeftPageRig/LeftSide
 @onready var right_side: MeshInstance3D = $PageRig/RightPageRig/RightSide
 @onready var left_page_rig: Node3D = $PageRig/LeftPageRig

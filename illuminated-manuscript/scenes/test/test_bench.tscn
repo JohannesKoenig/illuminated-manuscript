@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://duaard6iebnvb"]
+[gd_scene load_steps=36 format=3 uid="uid://duaard6iebnvb"]
 
 [ext_resource type="Script" path="res://scenes/test/test_bench.gd" id="1_ohmcr"]
 [ext_resource type="Script" path="res://book/model/page_content_resource.gd" id="2_kf0ic"]
@@ -131,19 +131,25 @@ script = ExtResource("9_toekd")
 current_page = 1
 pages = Array[ExtResource("2_kf0ic")]([SubResource("Resource_iccmr"), SubResource("Resource_etbm0"), SubResource("Resource_o3nnh"), SubResource("Resource_05gdp"), SubResource("Resource_4tekk"), SubResource("Resource_cqutt")])
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_sjhxg"]
+size = Vector3(0.341919, 0.225586, 3.3521)
+
 [node name="TestBench" type="Node3D"]
 script = ExtResource("1_ohmcr")
 book = SubResource("Resource_oyt6s")
 
 [node name="PreviousPage" parent="." instance=ExtResource("10_pli3g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.001, 0)
 progress = 0.01
 
-[node name="CurrentPage" parent="." instance=ExtResource("10_pli3g")]
-progress = 0.947
+[node name="CurrentPageL" parent="." instance=ExtResource("10_pli3g")]
+progress = 0.01
+
+[node name="CurrentPageR" parent="." instance=ExtResource("10_pli3g")]
+progress = 0.99
 
 [node name="NextPage" parent="." instance=ExtResource("10_pli3g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.001, 0)
 progress = 0.99
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -165,7 +171,25 @@ light_color = Color(1, 0.885504, 0.784351, 1)
 light_energy = 2.182
 omni_range = 3.99255
 
+[node name="RightDragStartArea3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.896, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightDragStartArea3D"]
+shape = SubResource("BoxShape3D_sjhxg")
+
+[node name="LeftDragStartArea3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.896, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftDragStartArea3D"]
+shape = SubResource("BoxShape3D_sjhxg")
+
+[connection signal="mouse_entered" from="RightDragStartArea3D" to="." method="_on_right_drag_start_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="RightDragStartArea3D" to="." method="_on_right_drag_start_area_3d_mouse_exited"]
+[connection signal="mouse_entered" from="LeftDragStartArea3D" to="." method="_on_left_drag_start_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="LeftDragStartArea3D" to="." method="_on_left_drag_start_area_3d_mouse_exited"]
+
 [editable path="PreviousPage"]
-[editable path="CurrentPage"]
+[editable path="CurrentPageL"]
+[editable path="CurrentPageR"]
 [editable path="NextPage"]
 [editable path="PageContent2d"]
