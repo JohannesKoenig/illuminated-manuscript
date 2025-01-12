@@ -64,6 +64,9 @@ func _process(delta):
 			load_page(book.current_page)
 			_was_dragging_r = false
 		current_page_r.progress = 0.99
+	
+	if not _left_dragging and not _right_dragging:
+		pass
 
 func load_page(page_number: int):
 	assert(page_number > 0, "Page number has to be greater than 0.")

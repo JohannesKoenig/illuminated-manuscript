@@ -20,6 +20,7 @@ func set_content_elements(content_elements: Array2D):
 				var element_2d = content_element_text_2d_packed_scene.instantiate() as ContentElementText2D
 				add_child(element_2d)
 				element_2d.set_content_element_size(content_element.size)
+				element_2d.set_font_size(content_element.font_size)
 				element_2d.position = Vector2(200 * j, 200 * i)
 				element_2d.set_content_element(content_element)
 				if content_element.size != Vector2i.ONE:

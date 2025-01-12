@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://book/model/page_content_resource.gd" id="2_kf0ic"]
 [ext_resource type="Script" path="res://book/model/content_element_text.gd" id="3_af5eq"]
 [ext_resource type="Script" path="res://book/model/array_2d.gd" id="4_1pyc7"]
+[ext_resource type="Texture2D" uid="uid://bu4onrvkrxtc2" path="res://assets/s_illumination.png" id="4_dutf7"]
 [ext_resource type="Script" path="res://book/model/content_element_grid.gd" id="5_ttxps"]
 [ext_resource type="Script" path="res://book/model/content_element_texture.gd" id="6_cvxbm"]
 [ext_resource type="Texture2D" uid="uid://b1r2ms52ld1xr" path="res://icon.svg" id="7_fagk0"]
@@ -11,24 +12,20 @@
 [ext_resource type="PackedScene" uid="uid://djfae1eiopiwp" path="res://book/page.tscn" id="10_pli3g"]
 [ext_resource type="PackedScene" uid="uid://bjc7jv1nnel1q" path="res://book/page_content_2d.tscn" id="11_eeodf"]
 
-[sub_resource type="Resource" id="Resource_54lek"]
-script = ExtResource("3_af5eq")
-text = "Schloss Vertikalschnipps"
-size = Vector2i(2, 2)
+[sub_resource type="Resource" id="Resource_2t3pb"]
+script = ExtResource("6_cvxbm")
+texture = ExtResource("4_dutf7")
+size = Vector2i(1, 1)
 
 [sub_resource type="Resource" id="Resource_eoywq"]
 script = ExtResource("3_af5eq")
-text = "Should be invisible"
-size = Vector2i(1, 1)
-
-[sub_resource type="Resource" id="Resource_fokro"]
-script = ExtResource("3_af5eq")
-text = "should be rendered"
-size = Vector2i(1, 1)
+text = "chloss Vertikalschnipps"
+font_size = 77
+size = Vector2i(3, 1)
 
 [sub_resource type="Resource" id="Resource_oh8n3"]
 script = ExtResource("4_1pyc7")
-_content = [SubResource("Resource_54lek"), SubResource("Resource_eoywq"), SubResource("Resource_fokro"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+_content = [SubResource("Resource_2t3pb"), SubResource("Resource_eoywq"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
 _x = 4
 _y = 7
 
@@ -44,6 +41,7 @@ content_elements = SubResource("Resource_llwj3")
 [sub_resource type="Resource" id="Resource_jtlf0"]
 script = ExtResource("3_af5eq")
 text = "Hier könnte ihre Werbung stehen"
+font_size = 32
 size = Vector2i(1, 1)
 
 [sub_resource type="Resource" id="Resource_oxnok"]
