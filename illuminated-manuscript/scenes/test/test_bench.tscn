@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://duaard6iebnvb"]
+[gd_scene load_steps=45 format=3 uid="uid://duaard6iebnvb"]
 
 [ext_resource type="Script" path="res://scenes/test/test_bench.gd" id="1_ohmcr"]
 [ext_resource type="Script" path="res://book/model/page_content_resource.gd" id="2_kf0ic"]
@@ -7,10 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://bu4onrvkrxtc2" path="res://assets/s_illumination.png" id="4_dutf7"]
 [ext_resource type="Script" path="res://book/model/content_element_grid.gd" id="5_ttxps"]
 [ext_resource type="Script" path="res://book/model/content_element_texture.gd" id="6_cvxbm"]
+[ext_resource type="Texture2D" uid="uid://i0hit2hw6li3" path="res://assets/castle.png" id="6_gipuq"]
 [ext_resource type="Texture2D" uid="uid://b1r2ms52ld1xr" path="res://icon.svg" id="7_fagk0"]
+[ext_resource type="Texture2D" uid="uid://b76fg16rrc648" path="res://assets/Indoor_castle.png" id="7_x83pj"]
 [ext_resource type="Script" path="res://book/model/book.gd" id="9_toekd"]
 [ext_resource type="PackedScene" uid="uid://djfae1eiopiwp" path="res://book/page.tscn" id="10_pli3g"]
 [ext_resource type="PackedScene" uid="uid://bjc7jv1nnel1q" path="res://book/page_content_2d.tscn" id="11_eeodf"]
+[ext_resource type="PackedScene" uid="uid://bjvf0r1ite8af" path="res://scenes/3d_decoration/candle.tscn" id="14_kvyku"]
 
 [sub_resource type="Resource" id="Resource_2t3pb"]
 script = ExtResource("6_cvxbm")
@@ -23,9 +26,37 @@ text = "chloss Vertikalschnipps"
 font_size = 77
 size = Vector2i(3, 1)
 
+[sub_resource type="Resource" id="Resource_2afc1"]
+script = ExtResource("3_af5eq")
+text = "Sitz des Herrschers Alexej der Erbauer, geboren im Jahr 103. Erster Sohn un Thronfolger von König Wilhelm dem 12. und Königin Franziska die Gütige"
+font_size = 32
+size = Vector2i(4, 1)
+
+[sub_resource type="Resource" id="Resource_86vgq"]
+script = ExtResource("3_af5eq")
+text = "Errichtet im Jahre 74 von König Wilhelm dem 12."
+font_size = 32
+size = Vector2i(3, 1)
+
+[sub_resource type="Resource" id="Resource_k35lp"]
+script = ExtResource("6_cvxbm")
+texture = ExtResource("6_gipuq")
+size = Vector2i(1, 2)
+
+[sub_resource type="Resource" id="Resource_v20h3"]
+script = ExtResource("3_af5eq")
+text = "Das Königreich verfügt über 132 Leibeigene, Lehnsknechte und Hörige, 20 Untervasallen und 3 Kronvasallen."
+font_size = 32
+size = Vector2i(3, 1)
+
+[sub_resource type="Resource" id="Resource_ih5l1"]
+script = ExtResource("6_cvxbm")
+texture = ExtResource("7_x83pj")
+size = Vector2i(4, 2)
+
 [sub_resource type="Resource" id="Resource_oh8n3"]
 script = ExtResource("4_1pyc7")
-_content = [SubResource("Resource_2t3pb"), SubResource("Resource_eoywq"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+_content = [SubResource("Resource_2t3pb"), SubResource("Resource_eoywq"), null, null, SubResource("Resource_2afc1"), null, null, null, SubResource("Resource_86vgq"), null, null, SubResource("Resource_k35lp"), SubResource("Resource_v20h3"), null, null, null, null, null, null, null, SubResource("Resource_ih5l1"), null, null, null, null, null, null, null]
 _x = 4
 _y = 7
 
@@ -38,15 +69,9 @@ script = ExtResource("2_kf0ic")
 page_number = 1
 content_elements = SubResource("Resource_llwj3")
 
-[sub_resource type="Resource" id="Resource_jtlf0"]
-script = ExtResource("3_af5eq")
-text = "Hier könnte ihre Werbung stehen"
-font_size = 32
-size = Vector2i(1, 1)
-
 [sub_resource type="Resource" id="Resource_oxnok"]
 script = ExtResource("4_1pyc7")
-_content = [null, null, null, null, null, SubResource("Resource_jtlf0"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+_content = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
 _x = 4
 _y = 7
 
@@ -132,6 +157,12 @@ pages = Array[ExtResource("2_kf0ic")]([SubResource("Resource_iccmr"), SubResourc
 [sub_resource type="BoxShape3D" id="BoxShape3D_sjhxg"]
 size = Vector3(0.341919, 0.225586, 3.3521)
 
+[sub_resource type="BoxMesh" id="BoxMesh_eymlf"]
+size = Vector3(10, 0.1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_81euk"]
+albedo_color = Color(0.21576, 0.10529, 0, 1)
+
 [node name="TestBench" type="Node3D"]
 script = ExtResource("1_ohmcr")
 book = SubResource("Resource_oyt6s")
@@ -157,18 +188,6 @@ size = 3.0
 
 [node name="PageContent2d" parent="." instance=ExtResource("11_eeodf")]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01533, 0.713813, -1.02097)
-light_color = Color(1, 0.885504, 0.784351, 1)
-light_energy = 2.182
-omni_range = 3.99255
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.37042, 1.29361, -1.34416)
-light_color = Color(1, 0.885504, 0.784351, 1)
-light_energy = 2.182
-omni_range = 3.99255
-
 [node name="RightDragStartArea3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.896, 0, 0)
 
@@ -181,6 +200,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.896, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LeftDragStartArea3D"]
 shape = SubResource("BoxShape3D_sjhxg")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.105654, 0)
+mesh = SubResource("BoxMesh_eymlf")
+surface_material_override/0 = SubResource("StandardMaterial3D_81euk")
+
+[node name="candle" parent="." instance=ExtResource("14_kvyku")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.4422, 0, -1.04779)
+
+[node name="OmniLight3D" parent="candle" index="2"]
+light_color = Color(1, 0.881193, 0.791398, 1)
+light_energy = 7.0
+omni_range = 5.0
+
+[node name="candle2" parent="." instance=ExtResource("14_kvyku")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.442, 0, -1.048)
+
+[node name="OmniLight3D" parent="candle2" index="2"]
+light_color = Color(1, 0.881193, 0.791398, 1)
+light_energy = 7.0
+omni_range = 5.0
+
 [connection signal="mouse_entered" from="RightDragStartArea3D" to="." method="_on_right_drag_start_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="RightDragStartArea3D" to="." method="_on_right_drag_start_area_3d_mouse_exited"]
 [connection signal="mouse_entered" from="LeftDragStartArea3D" to="." method="_on_left_drag_start_area_3d_mouse_entered"]
@@ -191,3 +231,5 @@ shape = SubResource("BoxShape3D_sjhxg")
 [editable path="CurrentPageR"]
 [editable path="NextPage"]
 [editable path="PageContent2d"]
+[editable path="candle"]
+[editable path="candle2"]

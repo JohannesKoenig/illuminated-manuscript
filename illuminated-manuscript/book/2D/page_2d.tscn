@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dedyg7lu2i37l"]
+[gd_scene load_steps=7 format=3 uid="uid://dedyg7lu2i37l"]
 
 [ext_resource type="Script" path="res://book/2D/page_2d.gd" id="1_k4lbg"]
 [ext_resource type="Script" path="res://book/2D/content_element_grid_container.gd" id="3_4m0nv"]
@@ -10,6 +10,17 @@ colors = PackedColorArray(0.985482, 0.711203, 0.382095, 1, 0.94716, 0.6216, 0.17
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ca13k"]
 gradient = SubResource("Gradient_eyrqm")
 fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_blnef"]
+offsets = PackedFloat32Array(0, 0.800325)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r1omc"]
+gradient = SubResource("Gradient_blnef")
+fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
 metadata/_snap_enabled = true
@@ -54,3 +65,11 @@ offset_bottom = 715.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_4m0nv")
+
+[node name="MousePointerShadow" type="TextureRect" parent="."]
+offset_left = -128.0
+offset_top = -251.0
+offset_right = -64.0
+offset_bottom = -187.0
+pivot_offset = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_r1omc")

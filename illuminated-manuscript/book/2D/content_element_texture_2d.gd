@@ -2,6 +2,7 @@ class_name ContentElementTexture2D extends Control
 
 @onready var texture_rect: TextureRect = $TextureRect
 var _pixel_ratio = Vector2i(200,200)
+var margin: float = 20
 
 func set_content_element(content_element: ContentElementTexture):
 	texture_rect.texture = content_element.texture

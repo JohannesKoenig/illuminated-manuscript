@@ -12,10 +12,10 @@ func initialize(x: int, y: int):
 	self._content.fill(null)
 
 func put_value(x: int, y: int, value):
-	self._content[x * self._y + y] = value
+	self._content[x * self._x + y] = value
 
 func get_value(x: int, y: int):
-	return self._content[x * self._y + y]
+	return self._content[y * self._x + x]
 
 func delete_value(x: int, y: int):
 	put_value(x, y, null)

@@ -20,11 +20,13 @@ var _was_dragging_r: bool = false
 
 var duration: float = 5
 var _start_time: float
+var camera_base_rotation: Vector3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_start_time = Time.get_unix_time_from_system()
 	load_page(book.current_page)
+	camera_base_rotation = get_viewport().get_camera_3d().rotation
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -51,7 +53,7 @@ func _process(delta):
 		current_page_l.progress = progress_from_left
 	else:
 		if _was_dragging_l and progress_from_left > 0.55:
-			book.current_page -= 2
+			book.current_page = max(1, book.current_page - 2)
 			load_page(book.current_page)
 			_was_dragging_l = false
 		current_page_l.progress = 0.01
@@ -65,8 +67,13 @@ func _process(delta):
 			_was_dragging_r = false
 		current_page_r.progress = 0.99
 	
-	if not _left_dragging and not _right_dragging:
-		pass
+	var middled = mouse_position / Vector2(get_viewport().size) - Vector2(0.5, 0.5)
+	var distance_from_middle = middled.length()
+	var camera = get_viewport().get_camera_3d()
+	var target_rotation = camera_base_rotation
+	if distance_from_middle > 0.4:
+		target_rotation = camera_base_rotation + Vector3( -0.1 * distance_from_middle * middled.y, 0, -0.1 * distance_from_middle * middled.x)
+	camera.rotation = lerp(camera.rotation, target_rotation, delta * 3)
 
 func load_page(page_number: int):
 	assert(page_number > 0, "Page number has to be greater than 0.")

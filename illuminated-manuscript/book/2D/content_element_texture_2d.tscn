@@ -15,4 +15,4 @@ script = ExtResource("1_vbaj7")
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 200.0
-expand_mode = 2
+expand_mode = 3
