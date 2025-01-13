@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://chxywhpqwfavv"]
+
+[ext_resource type="Script" path="res://book/2D/helpers/table_row.gd" id="1_bcqpu"]
+[ext_resource type="Texture2D" uid="uid://u4emmvr7tb7q" path="res://assets/wood_icon.png" id="1_fcrw6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cuq5f"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+script = ExtResource("1_bcqpu")
+
+[node name="IconTexture" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_fcrw6")
+expand_mode = 2
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Holz
+"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cuq5f")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="CountLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cuq5f")
+
+[node name="IncomeLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.224568, 0.562695, 0, 1)
+text = "+10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cuq5f")
+
+[node name="UsageLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.735637, 0, 0.0453997, 1)
+text = "-8"
+horizontal_alignment = 2
+vertical_alignment = 1

@@ -1,0 +1,1 @@
+class_name ContentElementGroup2D extends Control

@@ -43,6 +43,17 @@ func set_content_elements(content_elements: Array2D):
 						for _j in range(content_element.size.y):
 							blocked_x_indices[i + _i] = true
 							blocked_y_indices[j + _j] = true
+			if content_element is ContentElementPrefab:
+				var prefab_name = content_element.name
+				var prefab_packed_scene: PackedScene = load("res://book/2D/prefab_content_elements/" + prefab_name + ".tscn")
+				var prefab_instance = prefab_packed_scene.instantiate()
+				add_child(prefab_instance)
+				prefab_instance.position = Vector2((200+ margin) * i, (200+margin) * j)
+				if content_element.size != Vector2i.ONE:
+					for _i in range(content_element.size.x):
+						for _j in range(content_element.size.y):
+							blocked_x_indices[i + _i] = true
+							blocked_y_indices[j + _j] = true
 			
 func _add_blocked_element(x: int , y: int):
 	var element_2d = content_element_blocked_2d_packed_scene.instantiate()
