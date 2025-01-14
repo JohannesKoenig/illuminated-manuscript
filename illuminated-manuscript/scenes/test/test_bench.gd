@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var book: Book
+@onready var game_state: GameState = preload("res://logic/resources/game_state.tres")
 @onready var previous_page: Page = $PreviousPage
 @onready var current_page_l: Page = $CurrentPageL
 @onready var current_page_r: Page = $CurrentPageR
@@ -30,6 +31,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	current_page_l.right_page_scene_instance.is_active = true
+	current_page_r.left_page_scene_instance.is_active = true
 	var mouse_position = get_viewport().get_mouse_position()
 	var left_drag_center = get_viewport().get_camera_3d().unproject_position(left_drag_start_area_3d.position)
 	var right_drag_center = get_viewport().get_camera_3d().unproject_position(right_drag_start_area_3d.position)
@@ -62,7 +65,7 @@ func _process(delta):
 		current_page_r.progress = progress_from_left
 	else:
 		if _was_dragging_r and progress_from_left < 0.45:
-			book.current_page += 2
+			book.current_page = min(book.total_number_of_pages, book.current_page + 2)
 			load_page(book.current_page)
 			_was_dragging_r = false
 		current_page_r.progress = 0.99

@@ -6,7 +6,7 @@ var content_element_texture_2d_packed_scene: PackedScene = preload("res://book/2
 var content_element_empty_2d_packed_scene: PackedScene = preload("res://book/2D/content_element_empty_2d.tscn")
 var content_element_blocked_2d_packed_scene: PackedScene = preload("res://book/2D/content_element_blocked_2d.tscn")
 
-var margin: float = 20
+var margin: float = 0
 
 func set_content_elements(content_elements: Array2D):
 	var blocked_x_indices = {}

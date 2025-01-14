@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ContentElementPrefab" load_steps=2 format=3 uid="uid://4qdt2js4dvj7"]
+
+[ext_resource type="Script" path="res://book/model/content_element_prefab.gd" id="1_lctse"]
+
+[resource]
+script = ExtResource("1_lctse")
+name = "content_element_wood_cutter"
+size = Vector2i(2, 1)
+income = {
+"wood": 50
+}
+usage = {}
