@@ -67,7 +67,7 @@ func _process(delta):
 			_was_dragging_r = false
 		current_page_r.progress = 0.99
 	
-	var middled = mouse_position / Vector2(get_viewport().size) - Vector2(0.5, 0.5)
+	var middled = mouse_position / Vector2(get_window().content_scale_size) - Vector2(0.5, 0.5)
 	var distance_from_middle = middled.length()
 	var camera = get_viewport().get_camera_3d()
 	var target_rotation = camera_base_rotation

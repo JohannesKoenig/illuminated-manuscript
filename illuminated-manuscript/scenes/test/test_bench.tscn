@@ -221,6 +221,37 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 3.634, -1.07515, -1.762
 [node name="book" parent="." instance=ExtResource("16_5wqo5")]
 transform = Transform3D(0.497, 0, 0, 0, 0.497, 0, 0, 0, 0.497, 0, -0.538, -0.02)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Control" type="Control" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="NextRound" type="Button" parent="CanvasLayer/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -78.0
+offset_top = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Nächstes Jahr"
+
 [connection signal="mouse_entered" from="RightDragStartArea3D" to="." method="_on_right_drag_start_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="RightDragStartArea3D" to="." method="_on_right_drag_start_area_3d_mouse_exited"]
 [connection signal="mouse_entered" from="LeftDragStartArea3D" to="." method="_on_left_drag_start_area_3d_mouse_entered"]
