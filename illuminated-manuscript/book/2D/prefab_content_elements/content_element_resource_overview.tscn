@@ -1,24 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://biwa6xwtmkckv"]
+[gd_scene load_steps=3 format=3 uid="uid://biwa6xwtmkckv"]
 
 [ext_resource type="PackedScene" uid="uid://coq16jp6h2epi" path="res://book/2D/content_element_group_2d.tscn" id="1_k02h5"]
-[ext_resource type="Texture2D" uid="uid://u4emmvr7tb7q" path="res://assets/wood_icon.png" id="2_7ik4s"]
-[ext_resource type="PackedScene" uid="uid://chxywhpqwfavv" path="res://book/2D/helpers/table_row.tscn" id="2_8yb01"]
-[ext_resource type="Texture2D" uid="uid://iodd8swq71p3" path="res://assets/stone_icon.png" id="3_nnca3"]
-[ext_resource type="Texture2D" uid="uid://m8tglnmnpgu6" path="res://assets/food_icon.png" id="4_7v28t"]
-[ext_resource type="Texture2D" uid="uid://dh8nlqf53rlox" path="res://assets/iron_ore_icon.png" id="5_5phib"]
-[ext_resource type="Texture2D" uid="uid://cii7wmjawragv" path="res://assets/wood_coal_icon.png" id="5_bht07"]
-[ext_resource type="Texture2D" uid="uid://cwkrxp6suur2d" path="res://assets/iron_bar_icon.png" id="6_x4d0o"]
-[ext_resource type="Texture2D" uid="uid://bk4xd5hrlf74m" path="res://assets/fibre_icon.png" id="7_ejsgb"]
-[ext_resource type="Texture2D" uid="uid://c2j87oiaeyxeb" path="res://assets/fabric_icon.png" id="8_3ha5n"]
-[ext_resource type="Texture2D" uid="uid://dn52nyl4i6p4s" path="res://assets/rope_icon.png" id="9_u8207"]
-[ext_resource type="Texture2D" uid="uid://cvlagji5p5n10" path="res://assets/leather_icon.png" id="10_xvg4l"]
-[ext_resource type="Texture2D" uid="uid://b7k7g2u3xx22p" path="res://assets/clothes_icon.png" id="11_ovlaa"]
-[ext_resource type="Texture2D" uid="uid://ctas4hfvynx87" path="res://assets/fire_wood_icon.png" id="12_c5pck"]
+[ext_resource type="Script" path="res://book/2D/prefab_content_elements/content_element_resource_overview.gd" id="2_48wkf"]
 
 [node name="ContentElementGroup2D" instance=ExtResource("1_k02h5")]
 offset_right = -352.0
 offset_bottom = 752.0
 size_flags_horizontal = 3
+script = ExtResource("2_48wkf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
 layout_mode = 0
@@ -26,102 +15,6 @@ offset_top = 68.0
 offset_right = 800.0
 offset_bottom = 868.0
 theme_override_constants/separation = 20
-
-[node name="Wood" parent="VBoxContainer" index="0" instance=ExtResource("2_8yb01")]
-layout_mode = 2
-texture = ExtResource("2_7ik4s")
-item_name = "Holz"
-item_count = 100
-item_income = 10
-item_usage = 8
-
-[node name="FireWood" parent="VBoxContainer" index="1" instance=ExtResource("2_8yb01")]
-layout_mode = 2
-texture = ExtResource("12_c5pck")
-item_name = "Feuerholz"
-item_count = 100
-item_income = 10
-item_usage = 8
-
-[node name="WoodCoal" parent="VBoxContainer" index="2" instance=ExtResource("2_8yb01")]
-layout_mode = 2
-texture = ExtResource("5_bht07")
-item_name = "Holzkohle"
-item_count = 100
-item_income = 10
-item_usage = 8
-
-[node name="Stone" parent="VBoxContainer" index="3" instance=ExtResource("2_8yb01")]
-layout_mode = 2
-texture = ExtResource("3_nnca3")
-item_name = "Stein"
-item_count = 100
-item_income = 10
-item_usage = 8
-
-[node name="Food" parent="VBoxContainer" index="4" instance=ExtResource("2_8yb01")]
-layout_mode = 2
-texture = ExtResource("4_7v28t")
-item_name = "Nahrung"
-item_count = 100
-item_income = 10
-item_usage = 8
-
-[node name="IronOre" parent="VBoxContainer" index="5" instance=ExtResource("2_8yb01")]
-layout_mode = 2
-texture = ExtResource("5_5phib")
-item_name = "Eisenerz"
-item_count = 100
-item_income = 10
-item_usage = 8
-
-[node name="IronBar" parent="VBoxContainer" index="6" instance=ExtResource("2_8yb01")]
-layout_mode = 2
-texture = ExtResource("6_x4d0o")
-item_name = "Eisenbarren"
-item_count = 100
-item_income = 10
-item_usage = 8
-
-[node name="Fibre" parent="VBoxContainer" index="7" instance=ExtResource("2_8yb01")]
-layout_mode = 2
-texture = ExtResource("7_ejsgb")
-item_name = "Faser"
-item_count = 100
-item_income = 10
-item_usage = 8
-
-[node name="Fabric" parent="VBoxContainer" index="8" instance=ExtResource("2_8yb01")]
-layout_mode = 2
-texture = ExtResource("8_3ha5n")
-item_name = "Stoff"
-item_count = 100
-item_income = 10
-item_usage = 8
-
-[node name="Rope" parent="VBoxContainer" index="9" instance=ExtResource("2_8yb01")]
-layout_mode = 2
-texture = ExtResource("9_u8207")
-item_name = "Seil"
-item_count = 100
-item_income = 10
-item_usage = 8
-
-[node name="Leather" parent="VBoxContainer" index="10" instance=ExtResource("2_8yb01")]
-layout_mode = 2
-texture = ExtResource("10_xvg4l")
-item_name = "Leder"
-item_count = 100
-item_income = 10
-item_usage = 8
-
-[node name="Clothes" parent="VBoxContainer" index="11" instance=ExtResource("2_8yb01")]
-layout_mode = 2
-texture = ExtResource("11_ovlaa")
-item_name = "Kleidung"
-item_count = 100
-item_income = 10
-item_usage = 8
 
 [node name="Label" type="Label" parent="." index="1"]
 layout_mode = 0

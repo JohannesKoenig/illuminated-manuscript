@@ -1,0 +1,130 @@
+[gd_resource type="Resource" script_class="GameState" load_steps=27 format=3 uid="uid://hw6gm0460xea"]
+
+[ext_resource type="Texture2D" uid="uid://u4emmvr7tb7q" path="res://assets/wood_icon.png" id="1_qmlem"]
+[ext_resource type="Script" path="res://logic/game_state.gd" id="1_rkl6h"]
+[ext_resource type="Script" path="res://logic/game_resource.gd" id="2_1erfy"]
+[ext_resource type="Texture2D" uid="uid://ctas4hfvynx87" path="res://assets/fire_wood_icon.png" id="3_upqxx"]
+[ext_resource type="Texture2D" uid="uid://cii7wmjawragv" path="res://assets/wood_coal_icon.png" id="4_q7lsq"]
+[ext_resource type="Texture2D" uid="uid://iodd8swq71p3" path="res://assets/stone_icon.png" id="5_eplvc"]
+[ext_resource type="Texture2D" uid="uid://m8tglnmnpgu6" path="res://assets/food_icon.png" id="6_lxkq4"]
+[ext_resource type="Texture2D" uid="uid://dh8nlqf53rlox" path="res://assets/iron_ore_icon.png" id="7_0btpd"]
+[ext_resource type="Texture2D" uid="uid://cwkrxp6suur2d" path="res://assets/iron_bar_icon.png" id="8_acwew"]
+[ext_resource type="Texture2D" uid="uid://bk4xd5hrlf74m" path="res://assets/fibre_icon.png" id="9_h5iaw"]
+[ext_resource type="Texture2D" uid="uid://dn52nyl4i6p4s" path="res://assets/rope_icon.png" id="10_oa0cw"]
+[ext_resource type="Texture2D" uid="uid://cvlagji5p5n10" path="res://assets/leather_icon.png" id="11_0fo06"]
+[ext_resource type="Texture2D" uid="uid://b7k7g2u3xx22p" path="res://assets/clothes_icon.png" id="12_xvqtk"]
+[ext_resource type="Texture2D" uid="uid://c2j87oiaeyxeb" path="res://assets/fabric_icon.png" id="13_eoa5s"]
+
+[sub_resource type="Resource" id="Resource_gs78w"]
+script = ExtResource("2_1erfy")
+name = "Wood"
+icon = ExtResource("1_qmlem")
+count = 10
+income = 10
+usage = 2
+
+[sub_resource type="Resource" id="Resource_no36w"]
+script = ExtResource("2_1erfy")
+name = "Stone"
+icon = ExtResource("3_upqxx")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_17d42"]
+script = ExtResource("2_1erfy")
+name = "Stone"
+icon = ExtResource("4_q7lsq")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_ua5xu"]
+script = ExtResource("2_1erfy")
+name = "Stone"
+icon = ExtResource("5_eplvc")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_d44xx"]
+script = ExtResource("2_1erfy")
+name = "Food"
+icon = ExtResource("6_lxkq4")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_7otvw"]
+script = ExtResource("2_1erfy")
+name = "Iron Ore"
+icon = ExtResource("7_0btpd")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_8eo5k"]
+script = ExtResource("2_1erfy")
+name = "Iron bar"
+icon = ExtResource("8_acwew")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_jwvbb"]
+script = ExtResource("2_1erfy")
+name = "Fibre"
+icon = ExtResource("9_h5iaw")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_a8bho"]
+script = ExtResource("2_1erfy")
+name = "Rope"
+icon = ExtResource("10_oa0cw")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_8f3qg"]
+script = ExtResource("2_1erfy")
+name = "Leather"
+icon = ExtResource("11_0fo06")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_qqtek"]
+script = ExtResource("2_1erfy")
+name = "Clothes"
+icon = ExtResource("12_xvqtk")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_t70mx"]
+script = ExtResource("2_1erfy")
+name = "Cloth"
+icon = ExtResource("13_eoa5s")
+count = 0
+income = 0
+usage = 0
+
+[resource]
+script = ExtResource("1_rkl6h")
+year = 0
+resources = {
+"char coal": SubResource("Resource_17d42"),
+"cloth": SubResource("Resource_t70mx"),
+"clothes": SubResource("Resource_qqtek"),
+"fibre": SubResource("Resource_jwvbb"),
+"fire wood": SubResource("Resource_no36w"),
+"food": SubResource("Resource_d44xx"),
+"iron bar": SubResource("Resource_8eo5k"),
+"iron ore": SubResource("Resource_7otvw"),
+"leather": SubResource("Resource_8f3qg"),
+"rope": SubResource("Resource_a8bho"),
+"stone": SubResource("Resource_ua5xu"),
+"wood": SubResource("Resource_gs78w")
+}

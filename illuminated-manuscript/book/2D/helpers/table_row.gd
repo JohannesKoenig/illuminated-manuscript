@@ -1,11 +1,4 @@
-@tool
-extends HBoxContainer
-
-@export var texture: Texture
-@export var item_name: String
-@export var item_count: int
-@export var item_income: int
-@export var item_usage: int
+class_name TableRow extends HBoxContainer
 
 @onready var icon_texture = $IconTexture
 @onready var name_label = $NameLabel
@@ -13,9 +6,12 @@ extends HBoxContainer
 @onready var income_label = $HBoxContainer/IncomeLabel
 @onready var usage_label = $HBoxContainer/UsageLabel
 
-func _ready():
-	icon_texture.texture = texture
-	name_label.text = item_name
-	count_label.text = str(item_count)
-	income_label.text = "+" + str(item_income)
-	usage_label.text = "-" + str(item_usage)
+var game_resource: GameResource
+
+func _process(delta):
+	if game_resource != null:
+		icon_texture.texture = game_resource.icon
+		name_label.text = game_resource.name
+		count_label.text = str(game_resource.count)
+		income_label.text = "+" + str(game_resource.income)
+		usage_label.text = "-" + str(game_resource.usage)

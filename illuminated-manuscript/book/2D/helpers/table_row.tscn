@@ -5,7 +5,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cuq5f"]
 
-[node name="HBoxContainer" type="HBoxContainer"]
+[node name="TableRow" type="HBoxContainer"]
 script = ExtResource("1_bcqpu")
 
 [node name="IconTexture" type="TextureRect" parent="."]
