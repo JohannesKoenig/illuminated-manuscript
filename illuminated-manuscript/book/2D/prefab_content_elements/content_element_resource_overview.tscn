@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://biwa6xwtmkckv"]
+[gd_scene load_steps=15 format=3 uid="uid://biwa6xwtmkckv"]
 
 [ext_resource type="PackedScene" uid="uid://coq16jp6h2epi" path="res://book/2D/content_element_group_2d.tscn" id="1_k02h5"]
 [ext_resource type="Texture2D" uid="uid://u4emmvr7tb7q" path="res://assets/wood_icon.png" id="2_7ik4s"]
@@ -14,8 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://cvlagji5p5n10" path="res://assets/leather_icon.png" id="10_xvg4l"]
 [ext_resource type="Texture2D" uid="uid://b7k7g2u3xx22p" path="res://assets/clothes_icon.png" id="11_ovlaa"]
 [ext_resource type="Texture2D" uid="uid://ctas4hfvynx87" path="res://assets/fire_wood_icon.png" id="12_c5pck"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cuq5f"]
 
 [node name="ContentElementGroup2D" instance=ExtResource("1_k02h5")]
 offset_right = -352.0
@@ -61,193 +59,69 @@ item_count = 100
 item_income = 10
 item_usage = 8
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" index="4"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3" index="0"]
+[node name="Food" parent="VBoxContainer" index="4" instance=ExtResource("2_8yb01")]
 layout_mode = 2
 texture = ExtResource("4_7v28t")
-expand_mode = 2
+item_name = "Nahrung"
+item_count = 100
+item_income = 10
+item_usage = 8
 
-[node name="FoodCount" type="Label" parent="VBoxContainer/HBoxContainer3" index="1"]
-layout_mode = 2
-text = "Nahrung"
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer3" index="2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_cuq5f")
-
-[node name="FoodCount2" type="Label" parent="VBoxContainer/HBoxContainer3" index="3"]
-layout_mode = 2
-text = "100"
-vertical_alignment = 1
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer" index="5"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer4" index="0"]
+[node name="IronOre" parent="VBoxContainer" index="5" instance=ExtResource("2_8yb01")]
 layout_mode = 2
 texture = ExtResource("5_5phib")
-expand_mode = 2
+item_name = "Eisenerz"
+item_count = 100
+item_income = 10
+item_usage = 8
 
-[node name="IronOreCount" type="Label" parent="VBoxContainer/HBoxContainer4" index="1"]
-layout_mode = 2
-text = "Eisenerz
-"
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer4" index="2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_cuq5f")
-
-[node name="IronOreCount2" type="Label" parent="VBoxContainer/HBoxContainer4" index="3"]
-layout_mode = 2
-text = "100"
-vertical_alignment = 1
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer" index="6"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer5" index="0"]
+[node name="IronBar" parent="VBoxContainer" index="6" instance=ExtResource("2_8yb01")]
 layout_mode = 2
 texture = ExtResource("6_x4d0o")
-expand_mode = 2
+item_name = "Eisenbarren"
+item_count = 100
+item_income = 10
+item_usage = 8
 
-[node name="IronBarCount" type="Label" parent="VBoxContainer/HBoxContainer5" index="1"]
-layout_mode = 2
-text = "Eisenbarren"
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer5" index="2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_cuq5f")
-
-[node name="IronBarCount2" type="Label" parent="VBoxContainer/HBoxContainer5" index="3"]
-layout_mode = 2
-text = "100"
-vertical_alignment = 1
-
-[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer" index="7"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer6" index="0"]
+[node name="Fibre" parent="VBoxContainer" index="7" instance=ExtResource("2_8yb01")]
 layout_mode = 2
 texture = ExtResource("7_ejsgb")
-expand_mode = 2
+item_name = "Faser"
+item_count = 100
+item_income = 10
+item_usage = 8
 
-[node name="FibreCount" type="Label" parent="VBoxContainer/HBoxContainer6" index="1"]
-layout_mode = 2
-text = "Faser"
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer6" index="2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_cuq5f")
-
-[node name="FibreCount2" type="Label" parent="VBoxContainer/HBoxContainer6" index="3"]
-layout_mode = 2
-text = "100"
-vertical_alignment = 1
-
-[node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer" index="8"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer7" index="0"]
+[node name="Fabric" parent="VBoxContainer" index="8" instance=ExtResource("2_8yb01")]
 layout_mode = 2
 texture = ExtResource("8_3ha5n")
-expand_mode = 2
+item_name = "Stoff"
+item_count = 100
+item_income = 10
+item_usage = 8
 
-[node name="FabricCount" type="Label" parent="VBoxContainer/HBoxContainer7" index="1"]
-layout_mode = 2
-text = "Stoff"
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer7" index="2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_cuq5f")
-
-[node name="FabricCount2" type="Label" parent="VBoxContainer/HBoxContainer7" index="3"]
-layout_mode = 2
-text = "100"
-vertical_alignment = 1
-
-[node name="HBoxContainer8" type="HBoxContainer" parent="VBoxContainer" index="9"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer8" index="0"]
+[node name="Rope" parent="VBoxContainer" index="9" instance=ExtResource("2_8yb01")]
 layout_mode = 2
 texture = ExtResource("9_u8207")
-expand_mode = 2
+item_name = "Seil"
+item_count = 100
+item_income = 10
+item_usage = 8
 
-[node name="RopeCount" type="Label" parent="VBoxContainer/HBoxContainer8" index="1"]
-layout_mode = 2
-text = "Seil
-"
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer8" index="2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_cuq5f")
-
-[node name="RopeCount2" type="Label" parent="VBoxContainer/HBoxContainer8" index="3"]
-layout_mode = 2
-text = "100"
-vertical_alignment = 1
-
-[node name="HBoxContainer9" type="HBoxContainer" parent="VBoxContainer" index="10"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer9" index="0"]
+[node name="Leather" parent="VBoxContainer" index="10" instance=ExtResource("2_8yb01")]
 layout_mode = 2
 texture = ExtResource("10_xvg4l")
-expand_mode = 2
+item_name = "Leder"
+item_count = 100
+item_income = 10
+item_usage = 8
 
-[node name="LeatherCount" type="Label" parent="VBoxContainer/HBoxContainer9" index="1"]
-layout_mode = 2
-text = "Leder
-"
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer9" index="2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_cuq5f")
-
-[node name="LeatherCount2" type="Label" parent="VBoxContainer/HBoxContainer9" index="3"]
-layout_mode = 2
-text = "100"
-vertical_alignment = 1
-
-[node name="HBoxContainer10" type="HBoxContainer" parent="VBoxContainer" index="11"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer10" index="0"]
+[node name="Clothes" parent="VBoxContainer" index="11" instance=ExtResource("2_8yb01")]
 layout_mode = 2
 texture = ExtResource("11_ovlaa")
-expand_mode = 2
-
-[node name="ClothesCount" type="Label" parent="VBoxContainer/HBoxContainer10" index="1"]
-layout_mode = 2
-text = "Kleidung
-"
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer10" index="2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_cuq5f")
-
-[node name="ClothesCount2" type="Label" parent="VBoxContainer/HBoxContainer10" index="3"]
-layout_mode = 2
-text = "100"
-vertical_alignment = 1
+item_name = "Kleidung"
+item_count = 100
+item_income = 10
+item_usage = 8
 
 [node name="Label" type="Label" parent="." index="1"]
 layout_mode = 0
