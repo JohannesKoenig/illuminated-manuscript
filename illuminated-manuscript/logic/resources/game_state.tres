@@ -92,22 +92,6 @@ script = ExtResource("1_tdmpo")
 page_number = 0
 content_elements = SubResource("Resource_qwwlv")
 
-[sub_resource type="Resource" id="Resource_gs78w"]
-script = ExtResource("2_1erfy")
-name = "Wood"
-icon = ExtResource("1_qmlem")
-count = 10
-income = 10
-usage = 2
-
-[sub_resource type="Resource" id="Resource_no36w"]
-script = ExtResource("2_1erfy")
-name = "Stone"
-icon = ExtResource("3_upqxx")
-count = 0
-income = 0
-usage = 0
-
 [sub_resource type="Resource" id="Resource_17d42"]
 script = ExtResource("2_1erfy")
 name = "Stone"
@@ -116,58 +100,10 @@ count = 0
 income = 0
 usage = 0
 
-[sub_resource type="Resource" id="Resource_ua5xu"]
+[sub_resource type="Resource" id="Resource_t70mx"]
 script = ExtResource("2_1erfy")
-name = "Stone"
-icon = ExtResource("5_eplvc")
-count = 0
-income = 0
-usage = 0
-
-[sub_resource type="Resource" id="Resource_d44xx"]
-script = ExtResource("2_1erfy")
-name = "Food"
-icon = ExtResource("6_lxkq4")
-count = 0
-income = 0
-usage = 0
-
-[sub_resource type="Resource" id="Resource_7otvw"]
-script = ExtResource("2_1erfy")
-name = "Iron Ore"
-icon = ExtResource("7_0btpd")
-count = 0
-income = 0
-usage = 0
-
-[sub_resource type="Resource" id="Resource_8eo5k"]
-script = ExtResource("2_1erfy")
-name = "Iron bar"
-icon = ExtResource("8_acwew")
-count = 0
-income = 0
-usage = 0
-
-[sub_resource type="Resource" id="Resource_jwvbb"]
-script = ExtResource("2_1erfy")
-name = "Fibre"
-icon = ExtResource("9_h5iaw")
-count = 0
-income = 0
-usage = 0
-
-[sub_resource type="Resource" id="Resource_a8bho"]
-script = ExtResource("2_1erfy")
-name = "Rope"
-icon = ExtResource("10_oa0cw")
-count = 0
-income = 0
-usage = 0
-
-[sub_resource type="Resource" id="Resource_8f3qg"]
-script = ExtResource("2_1erfy")
-name = "Leather"
-icon = ExtResource("11_0fo06")
+name = "Cloth"
+icon = ExtResource("13_eoa5s")
 count = 0
 income = 0
 usage = 0
@@ -180,13 +116,77 @@ count = 0
 income = 0
 usage = 0
 
-[sub_resource type="Resource" id="Resource_t70mx"]
+[sub_resource type="Resource" id="Resource_jwvbb"]
 script = ExtResource("2_1erfy")
-name = "Cloth"
-icon = ExtResource("13_eoa5s")
+name = "Fibre"
+icon = ExtResource("9_h5iaw")
 count = 0
 income = 0
 usage = 0
+
+[sub_resource type="Resource" id="Resource_no36w"]
+script = ExtResource("2_1erfy")
+name = "Stone"
+icon = ExtResource("3_upqxx")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_d44xx"]
+script = ExtResource("2_1erfy")
+name = "Food"
+icon = ExtResource("6_lxkq4")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_8eo5k"]
+script = ExtResource("2_1erfy")
+name = "Iron bar"
+icon = ExtResource("8_acwew")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_7otvw"]
+script = ExtResource("2_1erfy")
+name = "Iron Ore"
+icon = ExtResource("7_0btpd")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_8f3qg"]
+script = ExtResource("2_1erfy")
+name = "Leather"
+icon = ExtResource("11_0fo06")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_a8bho"]
+script = ExtResource("2_1erfy")
+name = "Rope"
+icon = ExtResource("10_oa0cw")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_ua5xu"]
+script = ExtResource("2_1erfy")
+name = "Stone"
+icon = ExtResource("5_eplvc")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_gs78w"]
+script = ExtResource("2_1erfy")
+name = "Wood"
+icon = ExtResource("1_qmlem")
+count = 10
+income = 10
+usage = 2
 
 [resource]
 script = ExtResource("1_rkl6h")
