@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ContentElementPrefab" load_steps=2 format=3 uid="uid://dwrukihrdeagq"]
+
+[ext_resource type="Script" path="res://book/model/content_element_prefab.gd" id="1_xu7sx"]
+
+[resource]
+script = ExtResource("1_xu7sx")
+name = "content_element_basic_house"
+size = Vector2i(1, 1)
+income = {
+"population": 1
+}
+usage = {
+"food": 10
+}

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmc3togh5pikr"]
+
+[ext_resource type="PackedScene" uid="uid://coq16jp6h2epi" path="res://book/2D/content_element_group_2d.tscn" id="1_7bkpe"]
+[ext_resource type="Texture2D" uid="uid://b1r2ms52ld1xr" path="res://icon.svg" id="2_62lhj"]
+
+[node name="ContentElementGroup2D" instance=ExtResource("1_7bkpe")]
+offset_right = -1720.0
+offset_bottom = -880.0
+
+[node name="Label" type="Label" parent="." index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 49.0
+text = "Basic House"
+
+[node name="TextureRect" type="TextureRect" parent="." index="1"]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 128.0
+offset_bottom = 178.0
+texture = ExtResource("2_62lhj")

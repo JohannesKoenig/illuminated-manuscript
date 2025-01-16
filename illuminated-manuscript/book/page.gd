@@ -147,7 +147,7 @@ func calculate_mesh_inverse_bend(mesh: Mesh, up: bool):
 		var z = vertex_position.z
 		var new_pos = Vector3(-x,y,z)
 		mdt.set_vertex(index, new_pos)
-		mdt.set_vertex_normal(index, mdt.get_vertex_normal(index).inverse())
+		mdt.set_vertex_normal(index, mdt.get_vertex_normal(index) * -1)
 	array_mesh.clear_surfaces()
 	mdt.commit_to_surface(array_mesh)
 	return array_mesh

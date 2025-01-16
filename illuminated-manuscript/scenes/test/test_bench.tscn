@@ -147,8 +147,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.896, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LeftDragStartArea3D"]
 shape = SubResource("BoxShape3D_sjhxg")
 
+[node name="Wall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(16, 0, 0, 0, 0.0307171, -5.99999, 0, 5.99999, 0.0043196, 92.7594, 18.7436, -21.8047)
+mesh = SubResource("BoxMesh_eymlf")
+skeleton = NodePath("../TableTop")
+surface_material_override/0 = SubResource("StandardMaterial3D_81euk")
+
+[node name="Wall3" type="MeshInstance3D" parent="."]
+transform = Transform3D(16, 0, 0, 0, 0.0307171, -5.99999, 0, 5.99999, 0.0043196, -92.759, 18.744, -21.805)
+mesh = SubResource("BoxMesh_eymlf")
+skeleton = NodePath("../TableTop")
+surface_material_override/0 = SubResource("StandardMaterial3D_81euk")
+
+[node name="Wall4" type="MeshInstance3D" parent="."]
+transform = Transform3D(16, 0, 0, 0, 0.0307171, -5.99999, 0, 5.99999, 0.0043196, 0, 58.6146, -21.805)
+mesh = SubResource("BoxMesh_eymlf")
+skeleton = NodePath("../TableTop")
+surface_material_override/0 = SubResource("StandardMaterial3D_81euk")
+
+[node name="Wall5" type="MeshInstance3D" parent="."]
+transform = Transform3D(16, 0, 0, 0, 6.00007, 0, 0, 0, 5.99999, 0, 58.6146, 7.85482)
+mesh = SubResource("BoxMesh_eymlf")
+skeleton = NodePath("../TableTop")
+surface_material_override/0 = SubResource("StandardMaterial3D_81euk")
+
+[node name="Wall" type="MeshInstance3D" parent="."]
+transform = Transform3D(16, 0, 0, 0, 0.0307171, -5.99999, 0, 5.99999, 0.0043196, 0, -27.1086, -21.8047)
+mesh = SubResource("BoxMesh_eymlf")
+skeleton = NodePath("../TableTop")
+surface_material_override/0 = SubResource("StandardMaterial3D_81euk")
+
 [node name="TableTop" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1808, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 1.5, 0, -1.44805, -4.22378)
 mesh = SubResource("BoxMesh_eymlf")
 surface_material_override/0 = SubResource("StandardMaterial3D_81euk")
 
@@ -203,10 +233,69 @@ offset_bottom = 800.0
 grow_horizontal = 0
 script = ExtResource("18_d8wiv")
 
+[node name="Up" type="Button" parent="CanvasLayer/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -8.5
+offset_right = 8.5
+offset_bottom = 25.0
+grow_horizontal = 2
+text = "^"
+
+[node name="Down" type="Button" parent="CanvasLayer/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -8.5
+offset_top = -25.0
+offset_right = 8.5
+grow_horizontal = 2
+grow_vertical = 0
+rotation = 3.14159
+text = "^"
+
+[node name="Left" type="Button" parent="CanvasLayer/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -12.5
+offset_right = 16.0
+offset_bottom = 12.5
+grow_vertical = 2
+text = "<"
+
+[node name="Right" type="Button" parent="CanvasLayer/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -12.5
+offset_bottom = 12.5
+grow_horizontal = 0
+grow_vertical = 2
+text = ">"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.995575, 0.0405208, -0.0847816, -0.0434701, 0.601292, 0.797846, 0.0833079, 0.798001, -0.596871, 0, 0, 0)
+shadow_enabled = true
+
 [connection signal="mouse_entered" from="RightDragStartArea3D" to="." method="_on_right_drag_start_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="RightDragStartArea3D" to="." method="_on_right_drag_start_area_3d_mouse_exited"]
 [connection signal="mouse_entered" from="LeftDragStartArea3D" to="." method="_on_left_drag_start_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="LeftDragStartArea3D" to="." method="_on_left_drag_start_area_3d_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/Control/Up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/Control/Down" to="." method="_on_down_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/Control/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/Control/Right" to="." method="_on_right_pressed"]
 
 [editable path="PreviousPage"]
 [editable path="CurrentPageL"]

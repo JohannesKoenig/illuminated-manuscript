@@ -10,6 +10,8 @@ extends Node3D
 @onready var right_drag_start_area_3d = $RightDragStartArea3D
 @onready var left_drag_start_area_3d = $LeftDragStartArea3D
 
+var looking_up: bool = false
+var looking_book: bool = true
 
 var _mouse_in_right_drag_area: bool = false
 var _mouse_in_left_drag_area: bool = false
@@ -22,20 +24,39 @@ var _was_dragging_r: bool = false
 var duration: float = 5
 var _start_time: float
 var camera_base_rotation: Vector3
+var _camera_base_rotation_down: Vector3
+var _camera_base_rotation_up: Vector3
+var camera_base_position: Vector3
+var _camera_base_position_book: Vector3
+var _camera_base_position_letters: Vector3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_start_time = Time.get_unix_time_from_system()
 	load_page(book.current_page)
 	camera_base_rotation = get_viewport().get_camera_3d().rotation
+	_camera_base_rotation_down = camera_base_rotation
+	_camera_base_rotation_up = camera_base_rotation + Vector3(1.5,0,0)
+	camera_base_position = get_viewport().get_camera_3d().position
+	_camera_base_position_book = camera_base_position
+	_camera_base_position_letters = camera_base_position + Vector3(9, 0, 0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if looking_up:
+		camera_base_rotation = _camera_base_rotation_up
+	else:
+		camera_base_rotation = _camera_base_rotation_down
+	if looking_book:
+		camera_base_position = _camera_base_position_book
+	else:
+		camera_base_position = _camera_base_position_letters
 	current_page_l.right_page_scene_instance.is_active = true
 	current_page_r.left_page_scene_instance.is_active = true
 	var mouse_position = get_viewport().get_mouse_position()
 	var left_drag_center = get_viewport().get_camera_3d().unproject_position(left_drag_start_area_3d.position)
 	var right_drag_center = get_viewport().get_camera_3d().unproject_position(right_drag_start_area_3d.position)
+	get_viewport().get_camera_3d().position = lerp(get_viewport().get_camera_3d().position, camera_base_position, delta * 2)
 	var dist_from_left = max(0,mouse_position.x - left_drag_center.x)
 	var dist_from_right = max(0,right_drag_center.x - mouse_position.x)
 	var max_dist = right_drag_center.x - left_drag_center.x
@@ -120,3 +141,19 @@ func _on_left_drag_start_area_3d_mouse_entered():
 
 func _on_left_drag_start_area_3d_mouse_exited():
 	_mouse_in_left_drag_area = false
+
+
+func _on_up_pressed():
+	looking_up = true
+
+
+func _on_down_pressed():
+	looking_up = false
+
+
+func _on_left_pressed():
+	looking_book = true
+
+
+func _on_right_pressed():
+	looking_book = false

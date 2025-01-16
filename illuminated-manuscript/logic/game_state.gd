@@ -11,7 +11,9 @@ class_name GameState extends Resource
 func initialize():
 	for countryside_page in countryside_pages:
 		countryside_page.content_updated.connect(update_income)
+		countryside_page.content_updated.connect(update_usage)
 	update_income()
+	update_usage()
 
 func update_resources():
 	for resource_key in resources:
@@ -30,3 +32,16 @@ func update_income():
 					for resource in content_element.income:
 						if resources.has(resource):
 							resources[resource].income += content_element.income[resource]
+
+func update_usage():
+	for resource_key in resources:
+		resources[resource_key].usage = 0
+	for countryside_page: PageContentResource in countryside_pages:
+		var grid = countryside_page.content_elements.grid
+		for i in range(grid.get_width()):
+			for j in range(grid.get_height()):
+				var content_element = grid.get_value(i,j)
+				if content_element is ContentElementPrefab:
+					for resource in content_element.usage:
+						if resources.has(resource):
+							resources[resource].usage += content_element.usage[resource]

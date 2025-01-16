@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GameState" load_steps=46 format=3 uid="uid://hw6gm0460xea"]
+[gd_resource type="Resource" script_class="GameState" load_steps=50 format=3 uid="uid://hw6gm0460xea"]
 
 [ext_resource type="Texture2D" uid="uid://u4emmvr7tb7q" path="res://assets/wood_icon.png" id="1_qmlem"]
 [ext_resource type="Script" path="res://logic/game_state.gd" id="1_rkl6h"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://cvlagji5p5n10" path="res://assets/leather_icon.png" id="11_0fo06"]
 [ext_resource type="Texture2D" uid="uid://b7k7g2u3xx22p" path="res://assets/clothes_icon.png" id="12_xvqtk"]
 [ext_resource type="Texture2D" uid="uid://c2j87oiaeyxeb" path="res://assets/fabric_icon.png" id="13_eoa5s"]
+[ext_resource type="Texture2D" uid="uid://b5eqpb75jhhcn" path="res://assets/population_icon.png" id="19_m6r1v"]
+[ext_resource type="Texture2D" uid="uid://delgi4wcs65o5" path="res://assets/coin_icon.png" id="20_yynnx"]
 
 [sub_resource type="Resource" id="Resource_n4bxk"]
 script = ExtResource("2_i3hoj")
@@ -94,7 +96,7 @@ content_elements = SubResource("Resource_qwwlv")
 
 [sub_resource type="Resource" id="Resource_17d42"]
 script = ExtResource("2_1erfy")
-name = "Stone"
+name = "Char coal"
 icon = ExtResource("4_q7lsq")
 count = 0
 income = 0
@@ -126,7 +128,7 @@ usage = 0
 
 [sub_resource type="Resource" id="Resource_no36w"]
 script = ExtResource("2_1erfy")
-name = "Stone"
+name = "Firewood"
 icon = ExtResource("3_upqxx")
 count = 0
 income = 0
@@ -188,6 +190,22 @@ count = 10
 income = 10
 usage = 2
 
+[sub_resource type="Resource" id="Resource_p0ba1"]
+script = ExtResource("2_1erfy")
+name = "Population"
+icon = ExtResource("19_m6r1v")
+count = 10
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_invew"]
+script = ExtResource("2_1erfy")
+name = "Coins"
+icon = ExtResource("20_yynnx")
+count = 100
+income = 0
+usage = 0
+
 [resource]
 script = ExtResource("1_rkl6h")
 year = 0
@@ -195,12 +213,14 @@ resources = {
 "char coal": SubResource("Resource_17d42"),
 "cloth": SubResource("Resource_t70mx"),
 "clothes": SubResource("Resource_qqtek"),
+"coin": SubResource("Resource_invew"),
 "fibre": SubResource("Resource_jwvbb"),
 "fire wood": SubResource("Resource_no36w"),
 "food": SubResource("Resource_d44xx"),
 "iron bar": SubResource("Resource_8eo5k"),
 "iron ore": SubResource("Resource_7otvw"),
 "leather": SubResource("Resource_8f3qg"),
+"population": SubResource("Resource_p0ba1"),
 "rope": SubResource("Resource_a8bho"),
 "stone": SubResource("Resource_ua5xu"),
 "wood": SubResource("Resource_gs78w")
