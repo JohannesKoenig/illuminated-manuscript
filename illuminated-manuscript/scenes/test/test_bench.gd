@@ -6,6 +6,8 @@ extends Node3D
 @onready var current_page_l: Page = $CurrentPageL
 @onready var current_page_r: Page = $CurrentPageR
 @onready var next_page: Page = $NextPage
+@onready var sun = $DirectionalLight3D
+
 
 @onready var right_drag_start_area_3d = $RightDragStartArea3D
 @onready var left_drag_start_area_3d = $LeftDragStartArea3D
@@ -48,6 +50,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	sun.rotate_z(0.01 * delta)
 	if looking_up:
 		camera_base_rotation = _camera_base_rotation_up
 	else:
@@ -84,7 +87,7 @@ func _process(delta):
 		if _was_dragging_l and progress_from_left > 0.55:
 			book.current_page = max(1, book.current_page - 2)
 			load_page(book.current_page)
-			_was_dragging_l = false
+		_was_dragging_l = false
 		current_page_l.progress = 0.01
 	
 	if _right_dragging:
@@ -93,7 +96,7 @@ func _process(delta):
 		if _was_dragging_r and progress_from_left < 0.45:
 			book.current_page = min(book.total_number_of_pages, book.current_page + 2)
 			load_page(book.current_page)
-			_was_dragging_r = false
+		_was_dragging_r = false
 		current_page_r.progress = 0.99
 	
 	var middled = mouse_position / Vector2(get_window().content_scale_size) - Vector2(0.5, 0.5)

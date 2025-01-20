@@ -286,11 +286,11 @@ grow_vertical = 2
 text = ">"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.995575, 0.0405208, -0.0847816, -0.0434701, 0.601292, 0.797846, 0.0833079, 0.798001, -0.596871, 0, 0, 0)
+transform = Transform3D(-0.987873, 0.154509, 0.0153133, 0.106694, 0.603877, 0.789905, 0.1128, 0.781959, -0.613038, 0, 0, 0)
 shadow_enabled = true
 
 [node name="Letter" parent="." instance=ExtResource("19_xds8t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05359, -1.08292, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05359, -1.08292, -0.343549)
 
 [connection signal="mouse_entered" from="RightDragStartArea3D" to="." method="_on_right_drag_start_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="RightDragStartArea3D" to="." method="_on_right_drag_start_area_3d_mouse_exited"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://book/letter.gd" id="1_assxm"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_m2tn7"]
-size = Vector2(2, 3.15)
+size = Vector2(3, 4.725)
 subdivide_width = 10
 subdivide_depth = 10
 
