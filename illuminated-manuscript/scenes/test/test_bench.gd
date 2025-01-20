@@ -10,6 +10,9 @@ extends Node3D
 @onready var right_drag_start_area_3d = $RightDragStartArea3D
 @onready var left_drag_start_area_3d = $LeftDragStartArea3D
 
+@onready var letter = $Letter
+
+
 var looking_up: bool = false
 var looking_book: bool = true
 
@@ -40,6 +43,8 @@ func _ready():
 	camera_base_position = get_viewport().get_camera_3d().position
 	_camera_base_position_book = camera_base_position
 	_camera_base_position_letters = camera_base_position + Vector3(9, 0, 0)
+	game_state.year_changed.connect(load_tasks)
+	load_tasks()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -157,3 +162,8 @@ func _on_left_pressed():
 
 func _on_right_pressed():
 	looking_book = false
+
+func load_tasks():
+	for task in game_state.tasks	:
+		letter.set_page(task)
+	

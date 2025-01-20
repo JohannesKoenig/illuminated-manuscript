@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CollectionTask" load_steps=2 format=3 uid="uid://blitryd6lrpfd"]
+
+[ext_resource type="Script" path="res://logic/collection_task.gd" id="1_3qy36"]
+
+[resource]
+script = ExtResource("1_3qy36")
+requirementents = {
+"food": 200
+}
+task_name = "The king demands resources"
+task_description = "The king has ordered you to deliver 200 food rations as soon as possible."

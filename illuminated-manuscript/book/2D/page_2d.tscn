@@ -3,23 +3,23 @@
 [ext_resource type="Script" path="res://book/2D/page_2d.gd" id="1_k4lbg"]
 [ext_resource type="Script" path="res://book/2D/content_element_grid_container.gd" id="3_4m0nv"]
 
-[sub_resource type="Gradient" id="Gradient_eyrqm"]
+[sub_resource type="Gradient" id="Gradient_a3lb6"]
 offsets = PackedFloat32Array(0.935065, 1)
 colors = PackedColorArray(0.985482, 0.711203, 0.382095, 1, 0.94716, 0.6216, 0.175202, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ca13k"]
-gradient = SubResource("Gradient_eyrqm")
+gradient = SubResource("Gradient_a3lb6")
 fill = 2
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
 metadata/_snap_enabled = true
 
-[sub_resource type="Gradient" id="Gradient_blnef"]
+[sub_resource type="Gradient" id="Gradient_p0sib"]
 offsets = PackedFloat32Array(0, 0.800325)
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_r1omc"]
-gradient = SubResource("Gradient_blnef")
+gradient = SubResource("Gradient_p0sib")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)

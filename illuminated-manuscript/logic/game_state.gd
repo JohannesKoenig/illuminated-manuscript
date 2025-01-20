@@ -3,10 +3,14 @@ class_name GameState extends Resource
 @export var year: int:
 	set(new_value):
 		update_resources()
+		year_changed.emit()
 		year = new_value
 
 @export var resources: Dictionary
 @export var countryside_pages: Array[PageContentResource]
+@export var tasks: Array[Task]
+
+signal year_changed
 
 func initialize():
 	for countryside_page in countryside_pages:

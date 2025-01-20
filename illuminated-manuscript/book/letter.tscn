@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx5t3lmwvjhmp"]
+
+[ext_resource type="Script" path="res://book/letter.gd" id="1_assxm"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m2tn7"]
+size = Vector2(2, 3.15)
+subdivide_width = 10
+subdivide_depth = 10
+
+[node name="Letter" type="Node3D"]
+script = ExtResource("1_assxm")
+base_mesh = SubResource("PlaneMesh_m2tn7")
+
+[node name="Paper" type="MeshInstance3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+size = Vector2i(1024, 1618)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="SubViewport"]
+anchor_mode = 0
+
+[connection signal="mouse_entered" from="StaticBody3D" to="." method="_on_static_body_3d_mouse_entered"]
+[connection signal="mouse_exited" from="StaticBody3D" to="." method="_on_static_body_3d_mouse_exited"]

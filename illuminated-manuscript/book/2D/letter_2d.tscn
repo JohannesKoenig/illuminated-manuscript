@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsrx8opdlnsaj"]
+
+[ext_resource type="Script" path="res://book/2D/letter_2d.gd" id="1_f1o0u"]
+
+[sub_resource type="Gradient" id="Gradient_eyrqm"]
+offsets = PackedFloat32Array(0.935065, 1)
+colors = PackedColorArray(0.985482, 0.711203, 0.382095, 1, 0.94716, 0.6216, 0.175202, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k71v5"]
+gradient = SubResource("Gradient_eyrqm")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_blnef"]
+offsets = PackedFloat32Array(0, 0.800325)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w1ma5"]
+gradient = SubResource("Gradient_blnef")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
+
+[node name="Letter2d" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1024.0
+offset_bottom = 1618.0
+mouse_filter = 1
+script = ExtResource("1_f1o0u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 1617.92
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_k71v5")
+
+[node name="MousePointerShadow" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_w1ma5")
+
+[node name="Heading" type="Label" parent="."]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 144.0
+offset_right = 912.0
+offset_bottom = 344.0
+autowrap_mode = 3
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 386.0
+offset_right = 716.0
+offset_bottom = 1186.0
+autowrap_mode = 3
+
+[node name="Accept" type="Button" parent="."]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 760.0
+offset_right = 575.0
+offset_bottom = 817.0
+theme_override_font_sizes/font_size = 48
+text = "Accept"
+
+[node name="Decline" type="Button" parent="."]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 1472.0
+offset_right = 935.0
+offset_bottom = 1529.0
+theme_override_font_sizes/font_size = 48
+text = "Decline"
+
+[connection signal="mouse_entered" from="." to="." method="mouse_enter"]
+[connection signal="mouse_exited" from="." to="." method="mouse_exit"]
+[connection signal="pressed" from="Accept" to="." method="_on_accept_pressed"]
+[connection signal="pressed" from="Decline" to="." method="_on_decline_pressed"]
