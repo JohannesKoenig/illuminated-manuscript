@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GiftTask" load_steps=2 format=3 uid="uid://cgnfk17qplqge"]
+
+[ext_resource type="Script" path="res://logic/gift_task.gd" id="1_iydqh"]
+
+[resource]
+script = ExtResource("1_iydqh")
+gifts = {
+"food": 20
+}
+task_name = "Your wood cutters found some food"
+task_description = "While felling the requested trees your workers found some access food to distribute."

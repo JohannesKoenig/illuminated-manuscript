@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://maeuc2rqmnew"]
+[gd_scene load_steps=3 format=3 uid="uid://maeuc2rqmnew"]
 
 [ext_resource type="Script" path="res://scenes/test/content_element_prefab_list_item.gd" id="1_1loit"]
+[ext_resource type="Script" path="res://scenes/test/button_with_tooltip.gd" id="2_arvdg"]
 
 [node name="ContentElementPrefabListItem" type="Control"]
 custom_minimum_size = Vector2(60, 60)
@@ -11,10 +12,11 @@ offset_bottom = 40.0
 script = ExtResource("1_1loit")
 
 [node name="Button" type="Button" parent="."]
-layout_direction = 3
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
-theme_override_font_sizes/font_size = 48
+tooltip_text = "blank"
+theme_override_font_sizes/font_size = 32
+script = ExtResource("2_arvdg")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

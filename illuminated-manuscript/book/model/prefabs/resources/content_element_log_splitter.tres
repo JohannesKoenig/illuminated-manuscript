@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ContentElementPrefab" load_steps=2 format=3 uid="uid://c4agvevvtuj6k"]
+
+[ext_resource type="Script" path="res://book/model/content_element_prefab.gd" id="1_t502y"]
+
+[resource]
+script = ExtResource("1_t502y")
+name = "content_element_log_splitter"
+size = Vector2i(1, 1)
+income = {
+"fire wood": 20
+}
+usage = {
+"population": 1,
+"wood": 5
+}
+cost = {
+"wood": 20
+}

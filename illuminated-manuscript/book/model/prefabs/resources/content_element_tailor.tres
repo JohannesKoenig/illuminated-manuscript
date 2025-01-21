@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ContentElementPrefab" load_steps=2 format=3 uid="uid://dn3ttuxsalsa0"]
+
+[ext_resource type="Script" path="res://book/model/content_element_prefab.gd" id="1_a70tg"]
+
+[resource]
+script = ExtResource("1_a70tg")
+name = "content_element_tailor"
+size = Vector2i(3, 1)
+income = {
+"clothes": 5
+}
+usage = {
+"fibre": 20,
+"leather": 2,
+"population": 3
+}
+cost = {
+"stone": 100,
+"wood": 220
+}

@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyyj8aq417ybo"]
+
+[ext_resource type="PackedScene" uid="uid://coq16jp6h2epi" path="res://book/2D/content_element_group_2d.tscn" id="1_nqxuw"]
+[ext_resource type="Texture2D" uid="uid://b1r2ms52ld1xr" path="res://icon.svg" id="2_atx6e"]
+[ext_resource type="Texture2D" uid="uid://m8tglnmnpgu6" path="res://assets/food_icon.png" id="3_07c5d"]
+[ext_resource type="Texture2D" uid="uid://ctas4hfvynx87" path="res://assets/fire_wood_icon.png" id="4_4fnr8"]
+[ext_resource type="Texture2D" uid="uid://bk4xd5hrlf74m" path="res://assets/fibre_icon.png" id="5_pm8hq"]
+[ext_resource type="Texture2D" uid="uid://b5eqpb75jhhcn" path="res://assets/population_icon.png" id="6_c1w3t"]
+
+[node name="ContentElementGroup2D" instance=ExtResource("1_nqxuw")]
+offset_right = -1720.0
+offset_bottom = -680.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer" index="0"]
+layout_mode = 2
+text = "Forager"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" index="1"]
+layout_mode = 2
+texture = ExtResource("2_atx6e")
+expand_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.772549, 0, 1)
+text = "+10"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/HBoxContainer2" index="1"]
+layout_mode = 2
+texture = ExtResource("3_07c5d")
+expand_mode = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer3" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.772549, 0, 1)
+text = "+5"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/HBoxContainer3" index="1"]
+layout_mode = 2
+texture = ExtResource("4_4fnr8")
+expand_mode = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/HBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.772549, 0, 1)
+text = "+10"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2/HBoxContainer2" index="1"]
+layout_mode = 2
+texture = ExtResource("5_pm8hq")
+expand_mode = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2" index="1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/HBoxContainer3" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.790017, 0, 0.147497, 1)
+text = "-2"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2/HBoxContainer3" index="1"]
+layout_mode = 2
+texture = ExtResource("6_c1w3t")
+expand_mode = 3
+
+[node name="TextureRect" parent="." index="1"]
+offset_right = 200.0
+offset_bottom = 400.0

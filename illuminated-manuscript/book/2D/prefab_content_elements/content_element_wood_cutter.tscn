@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp0j86drhxu6e"]
+[gd_scene load_steps=5 format=3 uid="uid://bp0j86drhxu6e"]
 
 [ext_resource type="PackedScene" uid="uid://coq16jp6h2epi" path="res://book/2D/content_element_group_2d.tscn" id="1_u8ywn"]
 [ext_resource type="Texture2D" uid="uid://b1r2ms52ld1xr" path="res://icon.svg" id="2_0c60n"]
 [ext_resource type="Texture2D" uid="uid://u4emmvr7tb7q" path="res://assets/wood_icon.png" id="3_v2uas"]
+[ext_resource type="Texture2D" uid="uid://b5eqpb75jhhcn" path="res://assets/population_icon.png" id="4_r0aex"]
 
 [node name="ContentElementWoodCutter" instance=ExtResource("1_u8ywn")]
 anchors_preset = 0
@@ -13,7 +14,7 @@ offset_bottom = 200.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="TextureRect" type="TextureRect" parent="." index="0"]
+[node name="TextureRect2" type="TextureRect" parent="." index="0"]
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 200.0
@@ -26,19 +27,39 @@ offset_right = 400.0
 offset_bottom = 49.0
 text = "Wood cutter"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." index="2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="2"]
 layout_mode = 0
-offset_left = 200.0
-offset_top = 49.0
-offset_right = 348.0
-offset_bottom = 98.0
+offset_left = 209.0
+offset_top = 51.0
+offset_right = 305.0
+offset_bottom = 94.0
 
-[node name="Label3" type="Label" parent="HBoxContainer" index="0"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer" index="0"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.745098, 0, 1)
 text = "+50"
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer" index="1"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer" index="1"]
 layout_mode = 2
 texture = ExtResource("3_v2uas")
 expand_mode = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.109711, 0.177903, 1)
+text = "-2"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2" index="1"]
+layout_mode = 2
+texture = ExtResource("4_r0aex")
+expand_mode = 3
+
+[node name="TextureRect" parent="." index="3"]
+offset_right = 400.0
+offset_bottom = 200.0

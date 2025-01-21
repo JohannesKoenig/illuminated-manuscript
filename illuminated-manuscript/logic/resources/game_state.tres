@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GameState" load_steps=52 format=3 uid="uid://hw6gm0460xea"]
+[gd_resource type="Resource" script_class="GameState" load_steps=57 format=3 uid="uid://hw6gm0460xea"]
 
 [ext_resource type="Texture2D" uid="uid://u4emmvr7tb7q" path="res://assets/wood_icon.png" id="1_qmlem"]
 [ext_resource type="Script" path="res://logic/game_state.gd" id="1_rkl6h"]
@@ -6,13 +6,13 @@
 [ext_resource type="Script" path="res://logic/game_resource.gd" id="2_1erfy"]
 [ext_resource type="Script" path="res://book/model/array_2d.gd" id="2_i3hoj"]
 [ext_resource type="Resource" uid="uid://4qdt2js4dvj7" path="res://book/model/prefabs/resources/content_element_wood_cutter.tres" id="2_ka7qf"]
-[ext_resource type="Script" path="res://book/model/content_element_text.gd" id="2_rqxr3"]
 [ext_resource type="Script" path="res://book/model/content_element_grid.gd" id="3_7s1m3"]
 [ext_resource type="Texture2D" uid="uid://ctas4hfvynx87" path="res://assets/fire_wood_icon.png" id="3_upqxx"]
-[ext_resource type="Texture2D" uid="uid://cii7wmjawragv" path="res://assets/wood_coal_icon.png" id="4_q7lsq"]
+[ext_resource type="Resource" uid="uid://dwrukihrdeagq" path="res://book/model/prefabs/resources/content_element_basic_house.tres" id="3_v8475"]
 [ext_resource type="Texture2D" uid="uid://iodd8swq71p3" path="res://assets/stone_icon.png" id="5_eplvc"]
 [ext_resource type="Texture2D" uid="uid://m8tglnmnpgu6" path="res://assets/food_icon.png" id="6_lxkq4"]
 [ext_resource type="Texture2D" uid="uid://dh8nlqf53rlox" path="res://assets/iron_ore_icon.png" id="7_0btpd"]
+[ext_resource type="Texture2D" uid="uid://cii7wmjawragv" path="res://assets/char_coal_icon.png" id="7_f5vnt"]
 [ext_resource type="Texture2D" uid="uid://cwkrxp6suur2d" path="res://assets/iron_bar_icon.png" id="8_acwew"]
 [ext_resource type="Texture2D" uid="uid://bk4xd5hrlf74m" path="res://assets/fibre_icon.png" id="9_h5iaw"]
 [ext_resource type="Texture2D" uid="uid://dn52nyl4i6p4s" path="res://assets/rope_icon.png" id="10_oa0cw"]
@@ -23,10 +23,11 @@
 [ext_resource type="Texture2D" uid="uid://delgi4wcs65o5" path="res://assets/coin_icon.png" id="20_yynnx"]
 [ext_resource type="Script" path="res://logic/task.gd" id="22_rqwpt"]
 [ext_resource type="Resource" uid="uid://blitryd6lrpfd" path="res://logic/resources/king_food_task.tres" id="23_8gtj0"]
+[ext_resource type="Resource" uid="uid://cgnfk17qplqge" path="res://logic/resources/found_food_forrest.tres" id="23_gbuiy"]
 
 [sub_resource type="Resource" id="Resource_n4bxk"]
 script = ExtResource("2_i3hoj")
-_content = [ExtResource("2_ka7qf"), null, ExtResource("2_ka7qf"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+_content = [ExtResource("2_ka7qf"), null, ExtResource("2_ka7qf"), null, ExtResource("3_v8475"), ExtResource("3_v8475"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
 _x = 4
 _y = 7
 
@@ -36,18 +37,12 @@ grid = SubResource("Resource_n4bxk")
 
 [sub_resource type="Resource" id="Resource_thws2"]
 script = ExtResource("1_tdmpo")
-page_number = 0
+page_number = 3
 content_elements = SubResource("Resource_7ibtx")
-
-[sub_resource type="Resource" id="Resource_krmfr"]
-script = ExtResource("2_rqxr3")
-text = "Countryside"
-font_size = 32
-size = Vector2i(1, 1)
 
 [sub_resource type="Resource" id="Resource_rv8dg"]
 script = ExtResource("2_i3hoj")
-_content = [SubResource("Resource_krmfr"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+_content = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
 _x = 4
 _y = 7
 
@@ -57,18 +52,12 @@ grid = SubResource("Resource_rv8dg")
 
 [sub_resource type="Resource" id="Resource_peoar"]
 script = ExtResource("1_tdmpo")
-page_number = 0
+page_number = 4
 content_elements = SubResource("Resource_gjqjl")
-
-[sub_resource type="Resource" id="Resource_ii6gf"]
-script = ExtResource("2_rqxr3")
-text = "Countryside"
-font_size = 32
-size = Vector2i(1, 1)
 
 [sub_resource type="Resource" id="Resource_4ygxm"]
 script = ExtResource("2_i3hoj")
-_content = [SubResource("Resource_ii6gf"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+_content = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
 _x = 4
 _y = 7
 
@@ -78,7 +67,7 @@ grid = SubResource("Resource_4ygxm")
 
 [sub_resource type="Resource" id="Resource_puax0"]
 script = ExtResource("1_tdmpo")
-page_number = 0
+page_number = 5
 content_elements = SubResource("Resource_m1btf")
 
 [sub_resource type="Resource" id="Resource_pkc64"]
@@ -93,13 +82,43 @@ grid = SubResource("Resource_pkc64")
 
 [sub_resource type="Resource" id="Resource_em1du"]
 script = ExtResource("1_tdmpo")
-page_number = 0
+page_number = 6
 content_elements = SubResource("Resource_qwwlv")
+
+[sub_resource type="Resource" id="Resource_7x4p1"]
+script = ExtResource("2_i3hoj")
+_content = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+_x = 4
+_y = 7
+
+[sub_resource type="Resource" id="Resource_46q24"]
+script = ExtResource("3_7s1m3")
+grid = SubResource("Resource_7x4p1")
+
+[sub_resource type="Resource" id="Resource_bjdrc"]
+script = ExtResource("1_tdmpo")
+page_number = 7
+content_elements = SubResource("Resource_46q24")
+
+[sub_resource type="Resource" id="Resource_gkdv1"]
+script = ExtResource("2_i3hoj")
+_content = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+_x = 4
+_y = 7
+
+[sub_resource type="Resource" id="Resource_jf4xl"]
+script = ExtResource("3_7s1m3")
+grid = SubResource("Resource_gkdv1")
+
+[sub_resource type="Resource" id="Resource_vlqsg"]
+script = ExtResource("1_tdmpo")
+page_number = 8
+content_elements = SubResource("Resource_jf4xl")
 
 [sub_resource type="Resource" id="Resource_17d42"]
 script = ExtResource("2_1erfy")
 name = "Char coal"
-icon = ExtResource("4_q7lsq")
+icon = ExtResource("7_f5vnt")
 count = 0
 income = 0
 usage = 0
@@ -116,7 +135,7 @@ usage = 0
 script = ExtResource("2_1erfy")
 name = "Clothes"
 icon = ExtResource("12_xvqtk")
-count = 0
+count = 40
 income = 0
 usage = 0
 
@@ -140,7 +159,7 @@ usage = 0
 script = ExtResource("2_1erfy")
 name = "Firewood"
 icon = ExtResource("3_upqxx")
-count = 0
+count = 200
 income = 0
 usage = 0
 
@@ -148,7 +167,7 @@ usage = 0
 script = ExtResource("2_1erfy")
 name = "Food"
 icon = ExtResource("6_lxkq4")
-count = 0
+count = 200
 income = 0
 usage = 0
 
@@ -204,13 +223,13 @@ usage = 0
 script = ExtResource("2_1erfy")
 name = "Wood"
 icon = ExtResource("1_qmlem")
-count = 10
+count = 500
 income = 10
 usage = 2
 
 [resource]
 script = ExtResource("1_rkl6h")
-year = 0
+year = 1
 resources = {
 "char coal": SubResource("Resource_17d42"),
 "cloth": SubResource("Resource_t70mx"),
@@ -227,5 +246,5 @@ resources = {
 "stone": SubResource("Resource_ua5xu"),
 "wood": SubResource("Resource_gs78w")
 }
-countryside_pages = Array[ExtResource("1_tdmpo")]([SubResource("Resource_thws2"), SubResource("Resource_peoar"), SubResource("Resource_puax0"), SubResource("Resource_em1du")])
-tasks = Array[ExtResource("22_rqwpt")]([ExtResource("23_8gtj0")])
+countryside_pages = Array[ExtResource("1_tdmpo")]([SubResource("Resource_thws2"), SubResource("Resource_peoar"), SubResource("Resource_puax0"), SubResource("Resource_em1du"), SubResource("Resource_bjdrc"), SubResource("Resource_vlqsg")])
+tasks = Array[ExtResource("22_rqwpt")]([ExtResource("23_8gtj0"), ExtResource("23_8gtj0"), ExtResource("23_8gtj0"), ExtResource("23_8gtj0"), ExtResource("23_gbuiy")])

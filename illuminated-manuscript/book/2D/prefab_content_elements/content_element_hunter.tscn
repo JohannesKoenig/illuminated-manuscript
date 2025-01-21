@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://670oj3ltba7l"]
+
+[ext_resource type="PackedScene" uid="uid://coq16jp6h2epi" path="res://book/2D/content_element_group_2d.tscn" id="1_dq1fr"]
+[ext_resource type="Texture2D" uid="uid://m8tglnmnpgu6" path="res://assets/food_icon.png" id="2_wbt8q"]
+[ext_resource type="Texture2D" uid="uid://cvlagji5p5n10" path="res://assets/leather_icon.png" id="3_f5cva"]
+[ext_resource type="Texture2D" uid="uid://b5eqpb75jhhcn" path="res://assets/population_icon.png" id="3_jxeok"]
+
+[node name="ContentElementGroup2D" instance=ExtResource("1_dq1fr")]
+offset_right = -1720.0
+offset_bottom = -880.0
+
+[node name="TextureRect" parent="." index="0"]
+offset_right = 200.0
+offset_bottom = 200.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer" index="0"]
+layout_mode = 2
+text = "Hunter"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.756863, 0, 1)
+text = "+20"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+texture = ExtResource("2_wbt8q")
+expand_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.756863, 0, 1)
+text = "+2"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/HBoxContainer2" index="1"]
+layout_mode = 2
+texture = ExtResource("3_f5cva")
+expand_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/HBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.865669, 0, 0.164575, 1)
+text = "-1"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2/HBoxContainer2" index="1"]
+layout_mode = 2
+texture = ExtResource("3_jxeok")
+expand_mode = 2

@@ -12,7 +12,9 @@ extends Node3D
 @onready var right_drag_start_area_3d = $RightDragStartArea3D
 @onready var left_drag_start_area_3d = $LeftDragStartArea3D
 
-@onready var letter = $Letter
+@onready var letter_stack = $LetterStack
+@onready var timer = $Timer
+
 
 
 var looking_up: bool = false
@@ -35,8 +37,11 @@ var camera_base_position: Vector3
 var _camera_base_position_book: Vector3
 var _camera_base_position_letters: Vector3
 
+var _sun_start_rotation: Vector3
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_sun_start_rotation = sun.rotation
 	_start_time = Time.get_unix_time_from_system()
 	load_page(book.current_page)
 	camera_base_rotation = get_viewport().get_camera_3d().rotation
@@ -46,6 +51,7 @@ func _ready():
 	_camera_base_position_book = camera_base_position
 	_camera_base_position_letters = camera_base_position + Vector3(9, 0, 0)
 	game_state.year_changed.connect(load_tasks)
+	game_state.year_changed.connect(move_to_next_year)
 	load_tasks()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -167,6 +173,14 @@ func _on_right_pressed():
 	looking_book = false
 
 func load_tasks():
-	for task in game_state.tasks	:
-		letter.set_page(task)
+	letter_stack.set_tasks(game_state.tasks)
 	
+func move_to_next_year():
+	looking_up = true
+	looking_book = true
+	timer.start(3)
+	await timer.timeout
+	sun.rotation = _sun_start_rotation
+	looking_up = false
+	timer.start(3)
+	await timer.timeout

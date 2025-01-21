@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://drlksg0h6xdi0"]
+
+[ext_resource type="PackedScene" uid="uid://coq16jp6h2epi" path="res://book/2D/content_element_group_2d.tscn" id="1_e3e6w"]
+[ext_resource type="Texture2D" uid="uid://ctas4hfvynx87" path="res://assets/fire_wood_icon.png" id="2_qfoxf"]
+[ext_resource type="Texture2D" uid="uid://b5eqpb75jhhcn" path="res://assets/population_icon.png" id="3_kyotg"]
+[ext_resource type="Texture2D" uid="uid://u4emmvr7tb7q" path="res://assets/wood_icon.png" id="4_n02qt"]
+
+[node name="ContentElementGroup2D" instance=ExtResource("1_e3e6w")]
+offset_right = -1720.0
+offset_bottom = -880.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label2" type="Label" parent="VBoxContainer" index="0"]
+layout_mode = 2
+text = "Log splitter"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.784314, 0, 1)
+text = "+20"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+texture = ExtResource("2_qfoxf")
+expand_mode = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.932212, 0, 0.17226, 1)
+text = "-1"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2" index="1"]
+layout_mode = 2
+texture = ExtResource("3_kyotg")
+expand_mode = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2" index="2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.932212, 0, 0.17226, 1)
+text = "-5"
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer2" index="3"]
+layout_mode = 2
+texture = ExtResource("4_n02qt")
+expand_mode = 3
+
+[node name="TextureRect" parent="." index="1"]
+offset_right = 200.0
+offset_bottom = 200.0

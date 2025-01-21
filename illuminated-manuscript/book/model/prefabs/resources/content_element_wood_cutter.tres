@@ -9,4 +9,9 @@ size = Vector2i(2, 1)
 income = {
 "wood": 50
 }
-usage = {}
+usage = {
+"population": 2
+}
+cost = {
+"wood": 20
+}

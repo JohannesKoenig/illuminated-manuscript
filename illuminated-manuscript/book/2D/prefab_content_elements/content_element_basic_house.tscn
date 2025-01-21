@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmc3togh5pikr"]
+[gd_scene load_steps=7 format=3 uid="uid://bmc3togh5pikr"]
 
 [ext_resource type="PackedScene" uid="uid://coq16jp6h2epi" path="res://book/2D/content_element_group_2d.tscn" id="1_7bkpe"]
-[ext_resource type="Texture2D" uid="uid://b1r2ms52ld1xr" path="res://icon.svg" id="2_62lhj"]
+[ext_resource type="Texture2D" uid="uid://b5eqpb75jhhcn" path="res://assets/population_icon.png" id="2_0pduk"]
+[ext_resource type="Texture2D" uid="uid://delgi4wcs65o5" path="res://assets/coin_icon.png" id="3_fbcml"]
+[ext_resource type="Texture2D" uid="uid://m8tglnmnpgu6" path="res://assets/food_icon.png" id="4_eqypj"]
+[ext_resource type="Texture2D" uid="uid://b7k7g2u3xx22p" path="res://assets/clothes_icon.png" id="5_diisx"]
+[ext_resource type="Texture2D" uid="uid://ctas4hfvynx87" path="res://assets/fire_wood_icon.png" id="6_7y77h"]
 
 [node name="ContentElementGroup2D" instance=ExtResource("1_7bkpe")]
 offset_right = -1720.0
@@ -13,9 +17,86 @@ offset_right = 40.0
 offset_bottom = 49.0
 text = "Basic House"
 
-[node name="TextureRect" type="TextureRect" parent="." index="1"]
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
 layout_mode = 0
-offset_top = 50.0
-offset_right = 128.0
-offset_bottom = 178.0
-texture = ExtResource("2_62lhj")
+offset_top = 48.0
+offset_right = 237.0
+offset_bottom = 138.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.644653, 0.205816, 1)
+text = "+2"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+texture = ExtResource("2_0pduk")
+expand_mode = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.644653, 0.205816, 1)
+text = "+4"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/HBoxContainer2" index="1"]
+layout_mode = 2
+texture = ExtResource("3_fbcml")
+expand_mode = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.946438, 0.222563, 0, 1)
+text = "-10"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2/HBoxContainer" index="1"]
+layout_mode = 2
+texture = ExtResource("4_eqypj")
+expand_mode = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2" index="1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/HBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.946438, 0.222563, 0, 1)
+text = "-1"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2/HBoxContainer2" index="1"]
+layout_mode = 2
+texture = ExtResource("5_diisx")
+expand_mode = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/HBoxContainer3" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/HBoxContainer3" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.946438, 0.222563, 0, 1)
+text = "-5"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3/HBoxContainer3" index="1"]
+layout_mode = 2
+texture = ExtResource("6_7y77h")
+expand_mode = 3
+
+[node name="TextureRect" parent="." index="2"]
+offset_right = 200.0
+offset_bottom = 200.0

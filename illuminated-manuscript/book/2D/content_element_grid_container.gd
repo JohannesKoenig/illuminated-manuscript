@@ -11,6 +11,9 @@ var margin: float = 0
 func set_content_elements(content_elements: Array2D):
 	var blocked_x_indices = {}
 	var blocked_y_indices = {}
+	
+	for child in get_children():
+		child.queue_free()
 
 	self._content_elements = content_elements
 	for i in range(content_elements.get_width()):

@@ -7,8 +7,14 @@ script = ExtResource("1_xu7sx")
 name = "content_element_basic_house"
 size = Vector2i(1, 1)
 income = {
-"population": 1
+"coin": 4,
+"population": 2
 }
 usage = {
+"clothes": 1,
+"fire wood": 5,
 "food": 10
+}
+cost = {
+"wood": 100
 }

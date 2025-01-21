@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://cunn88l5sgt17"]
+
+[ext_resource type="PackedScene" uid="uid://coq16jp6h2epi" path="res://book/2D/content_element_group_2d.tscn" id="1_tpetv"]
+[ext_resource type="Texture2D" uid="uid://b1r2ms52ld1xr" path="res://icon.svg" id="2_b1dcu"]
+[ext_resource type="Texture2D" uid="uid://b7k7g2u3xx22p" path="res://assets/clothes_icon.png" id="3_0a15o"]
+[ext_resource type="Texture2D" uid="uid://bk4xd5hrlf74m" path="res://assets/fibre_icon.png" id="4_ucf13"]
+[ext_resource type="Texture2D" uid="uid://cvlagji5p5n10" path="res://assets/leather_icon.png" id="5_u20ya"]
+[ext_resource type="Texture2D" uid="uid://b5eqpb75jhhcn" path="res://assets/population_icon.png" id="6_bxnm6"]
+
+[node name="ContentElementGroup2D" instance=ExtResource("1_tpetv")]
+
+[node name="TextureRect" parent="." index="0"]
+offset_right = 600.0
+offset_bottom = 200.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." index="1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Tailor"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer" index="1"]
+layout_mode = 2
+texture = ExtResource("2_b1dcu")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.811765, 0, 1)
+text = "+5"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/HBoxContainer" index="1"]
+layout_mode = 2
+texture = ExtResource("3_0a15o")
+expand_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2" index="1"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2/HBoxContainer3" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/HBoxContainer3/HBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93213, 0, 0.0809246, 1)
+text = "-20"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/HBoxContainer3/HBoxContainer2" index="1"]
+layout_mode = 2
+texture = ExtResource("4_ucf13")
+expand_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2/HBoxContainer3" index="1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/HBoxContainer3/HBoxContainer3" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93213, 0, 0.0809246, 1)
+text = "-2"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/HBoxContainer3/HBoxContainer3" index="1"]
+layout_mode = 2
+texture = ExtResource("5_u20ya")
+expand_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2/HBoxContainer3" index="2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/HBoxContainer3/HBoxContainer4" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93213, 0, 0.0809246, 1)
+text = "-3"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/HBoxContainer3/HBoxContainer4" index="1"]
+layout_mode = 2
+texture = ExtResource("6_bxnm6")
+expand_mode = 2

@@ -5,6 +5,7 @@ class_name Page2D extends Node2D
 @onready var page_number_r = $PageNumberR
 @onready var content_element_grid_container = $ContentElementGridContainer
 @onready var mouse_pointer_shadow = $MousePointerShadow
+@onready var game_state: GameState = preload("res://logic/resources/game_state.tres")
 
 var mouse_inside: bool = false
 var mouse_position: Vector2
@@ -24,14 +25,16 @@ func _process(delta):
 	):
 		var mouse_position_in_grid = mouse_position - content_element_grid_container.position
 		var grid_index = mouse_position_in_grid / Vector2(200, 200)
-		page_content_resource.set_content_element(
-			grid_index.y, 
-			grid_index.x, 
-			DragAndDropClipboard.selected_content_element_prefab
-		)
-		content_element_grid_container.set_content_elements(
-			page_content_resource.content_elements.grid
-		)
+		if game_state.can_build(DragAndDropClipboard.selected_content_element_prefab.cost):
+			game_state.pay_for(DragAndDropClipboard.selected_content_element_prefab.cost)
+			page_content_resource.set_content_element(
+				grid_index.y, 
+				grid_index.x, 
+				DragAndDropClipboard.selected_content_element_prefab
+			)
+			content_element_grid_container.set_content_elements(
+				page_content_resource.content_elements.grid
+			)
 		
 		
 

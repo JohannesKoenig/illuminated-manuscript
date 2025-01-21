@@ -167,13 +167,11 @@ func set_right_page(page_content_resource: PageContentResource):
 
 func _on_static_body_3d_mouse_entered():
 	mouse_entered.emit()
-	print("entered left")
 	mouse_inside = true
 
 
 func _on_static_body_3d_mouse_exited():
 	mouse_exited.emit()
-	print("exited left")
 	mouse_inside = false
 
 func raycast_from_mouse():

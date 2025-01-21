@@ -49,3 +49,15 @@ func update_usage():
 					for resource in content_element.usage:
 						if resources.has(resource):
 							resources[resource].usage += content_element.usage[resource]
+
+func can_build(costs: Dictionary):
+	for key in costs:
+		var cost = costs[key]
+		if cost > resources[key].count:
+			return false
+	return true
+
+func pay_for(costs: Dictionary):
+	for key in costs:
+		var cost = costs[key]
+		resources[key].count -= cost

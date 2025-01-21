@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfmhxypwbuxdc"]
+
+[ext_resource type="Script" path="res://scenes/test/letter_stack.gd" id="1_0d8np"]
+
+[node name="LetterStack" type="Node3D"]
+script = ExtResource("1_0d8np")

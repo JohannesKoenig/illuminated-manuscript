@@ -21,3 +21,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 17.0
 text = "Rohstoffvorrat"
+
+[node name="TextureRect" parent="." index="2"]
+visible = false

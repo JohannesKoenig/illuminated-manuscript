@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ContentElementPrefab" load_steps=2 format=3 uid="uid://cg6fd1pvesxt4"]
+
+[ext_resource type="Script" path="res://book/model/content_element_prefab.gd" id="1_elen5"]
+
+[resource]
+script = ExtResource("1_elen5")
+name = "content_element_forager"
+size = Vector2i(1, 2)
+income = {
+"fibre": 10,
+"fire wood": 5,
+"food": 10
+}
+usage = {
+"population": 2
+}
+cost = {
+"wood": 25
+}

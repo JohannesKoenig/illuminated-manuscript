@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://coq16jp6h2epi"]
+[gd_scene load_steps=4 format=3 uid="uid://coq16jp6h2epi"]
 
 [ext_resource type="Script" path="res://book/2D/content_element_group_2d.gd" id="1_q8wgm"]
+
+[sub_resource type="Gradient" id="Gradient_rlcv4"]
+offsets = PackedFloat32Array(0.853448, 0.946121, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.137255, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vnp30"]
+gradient = SubResource("Gradient_rlcv4")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
 
 [node name="ContentElementGroup2D" type="Control"]
 layout_mode = 3
@@ -10,3 +21,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q8wgm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("GradientTexture2D_vnp30")

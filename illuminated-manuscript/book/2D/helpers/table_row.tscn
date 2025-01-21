@@ -29,6 +29,9 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_cuq5f")
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
+[node name="IndicatorIcon" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
 [node name="CountLabel" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 text = "100"
