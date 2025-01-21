@@ -7,7 +7,7 @@ class_name Letter extends Node3D
 signal mouse_entered
 signal mouse_exited
 var mouse_inside: bool = false
-
+var task: Task
 @export var base_mesh: Mesh
 
 @onready var letter_scene: PackedScene = preload("res://book/2D/letter_2d.tscn")
@@ -65,10 +65,11 @@ func _unhandled_input(event: InputEvent):
 
 	
 func set_page(task: Task):
+	self.task = task
 	if letter_scene_instance:
 		letter_scene_instance.queue_free()
 	letter_scene_instance = letter_scene.instantiate() as Letter2D
-	letter_scene_instance.task_completed.connect(queue_free)
+	letter_scene_instance.task_completed.connect(remove_task)
 	letter_scene_instance.task_resource = task
 	sub_viewport.add_child(letter_scene_instance)
 
@@ -99,3 +100,7 @@ func raycast_from_mouse():
 	var query = PhysicsRayQueryParameters3D.create(ray_start, ray_end)
 	
 	return space_state.intersect_ray(query)
+
+func remove_task():
+	letter_scene_instance.game_state.tasks.erase(task)
+	queue_free()
