@@ -9,6 +9,7 @@ class_name GameState extends Resource
 @export var resources: Dictionary
 @export var countryside_pages: Array[PageContentResource]
 @export var tasks: Array[Task]
+@export var modifier: Array
 
 signal year_changed
 
@@ -22,7 +23,10 @@ func initialize():
 func update_resources():
 	for resource_key in resources:
 		var resource: GameResource = resources[resource_key]
-		resource.count = resource.count + resource.income - resource.usage
+		var resource_duplicate = resource
+		for modifier_resource: Modifier in modifier:
+			resource_duplicate = modifier_resource.apply_modifier(resource_duplicate)
+		resource.count = resource_duplicate.count + resource_duplicate.income - resource_duplicate.usage
 
 func update_income():
 	for resource_key in resources:

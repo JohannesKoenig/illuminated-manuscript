@@ -64,4 +64,5 @@ Click={
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(4.81307e-07, 0.627767, 0.835074, 1)

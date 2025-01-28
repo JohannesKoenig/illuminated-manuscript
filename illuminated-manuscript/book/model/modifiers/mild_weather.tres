@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MultiplicationModifier" load_steps=2 format=3 uid="uid://bd7qwjq6i76aa"]
+
+[ext_resource type="Script" path="res://book/model/multiplication_modifier.gd" id="1_wji77"]
+
+[resource]
+script = ExtResource("1_wji77")
+multiplication_factor = 1.4
+positive = true
+modifier_name = "Mild Weather"
+target_resource = "Food"
+target_value = "income"

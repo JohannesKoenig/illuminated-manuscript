@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MultiplicationModifier" load_steps=2 format=3 uid="uid://ct0cauybh5f2q"]
+
+[ext_resource type="Script" path="res://book/model/multiplication_modifier.gd" id="1_tu3t3"]
+
+[resource]
+script = ExtResource("1_tu3t3")
+multiplication_factor = 1.2
+positive = true
+modifier_name = "Baby Boom"
+target_resource = "Population"
+target_value = "income"

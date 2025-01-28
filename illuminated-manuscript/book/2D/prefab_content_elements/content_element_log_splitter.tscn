@@ -14,7 +14,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Background" parent="." index="1"]
+[node name="Background" parent="." index="2"]
 visible = false
 
 [node name="Label2" type="Label" parent="VBoxContainer" index="0"]

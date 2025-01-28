@@ -99,5 +99,5 @@ layout_mode = 2
 texture = ExtResource("6_7y77h")
 expand_mode = 3
 
-[node name="Background" parent="." index="2"]
+[node name="Background" parent="." index="3"]
 visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://duaard6iebnvb"]
+[gd_scene load_steps=48 format=3 uid="uid://duaard6iebnvb"]
 
 [ext_resource type="Script" path="res://scenes/test/test_bench.gd" id="1_ohmcr"]
 [ext_resource type="Script" path="res://book/model/page_content_resource.gd" id="2_kf0ic"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bfmhxypwbuxdc" path="res://scenes/test/letter_stack.tscn" id="20_t155u"]
 [ext_resource type="PackedScene" uid="uid://cufbv6co7u0ty" path="res://scenes/test/gui_tooltip.tscn" id="22_6s7c1"]
 [ext_resource type="PackedScene" uid="uid://d0bfx0qw8wjbm" path="res://scenes/test/placement_preview.tscn" id="23_7xipy"]
+[ext_resource type="PackedScene" uid="uid://bnkyp8sgmjmkq" path="res://scenes/test/gui_resource_table_tooltip.tscn" id="24_0p5nr"]
 [ext_resource type="AudioStream" uid="uid://dcn57jqtm0gru" path="res://assets/background_track.mp3" id="24_yy0gc"]
 [ext_resource type="AudioStream" uid="uid://ctdohg2d6l0i2" path="res://assets/page_turn.mp3" id="25_ghxux"]
 
@@ -377,6 +378,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 
+[node name="GuiResourceTableTooltip" parent="CanvasLayer" instance=ExtResource("24_0p5nr")]
+visible = false
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 148.545, 0)
 light_color = Color(1, 0.858727, 0.74913, 1)
@@ -395,6 +399,7 @@ environment = SubResource("Environment_o26hc")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_yy0gc")
+volume_db = -80.0
 autoplay = true
 
 [node name="PageTurnAudioStreamPlayer" type="AudioStreamPlayer" parent="."]

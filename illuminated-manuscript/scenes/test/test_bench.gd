@@ -9,6 +9,13 @@ extends Node3D
 @onready var sun = $DirectionalLight3D
 @onready var page_turn_audio_stream_player = $PageTurnAudioStreamPlayer
 
+var modifier_paths: Array = [
+	"res://book/model/modifiers/the_plague.tres",
+	"res://book/model/modifiers/baby_boom.tres",
+	"res://book/model/modifiers/bark_beetle_infestation.tres",
+	"res://book/model/modifiers/mild_weather.tres",
+	"res://book/model/modifiers/the_plague.tres",
+]
 
 @onready var right_drag_start_area_3d = $RightDragStartArea3D
 @onready var left_drag_start_area_3d = $LeftDragStartArea3D
@@ -53,6 +60,7 @@ func _ready():
 	_camera_base_position_letters = camera_base_position + Vector3(9, 0, 0)
 	game_state.year_changed.connect(load_tasks)
 	game_state.year_changed.connect(move_to_next_year)
+	game_state.year_changed.connect(update_modifiers)
 	load_tasks()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -187,3 +195,13 @@ func move_to_next_year():
 	looking_up = false
 	timer.start(3)
 	await timer.timeout
+
+func update_modifiers():
+	game_state.modifier.clear()
+	var nr_of_modifiers = randi_range(0,4)
+	var files = modifier_paths.duplicate()
+	files.shuffle()
+	files = files.slice(0,nr_of_modifiers)
+	for file in files:
+		var modifier_resource: Modifier = load(file)
+		game_state.modifier.append(modifier_resource)

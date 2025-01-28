@@ -7,6 +7,8 @@
 offset_right = -352.0
 offset_bottom = 752.0
 size_flags_horizontal = 3
+tooltip_text = ""
+mouse_filter = 1
 script = ExtResource("2_48wkf")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="." index="0"]
@@ -22,8 +24,5 @@ offset_right = 40.0
 offset_bottom = 17.0
 text = "Rohstoffvorrat"
 
-[node name="TextureRect" parent="." index="2"]
-visible = false
-
-[node name="VBoxContainer" parent="." index="3"]
+[node name="VBoxContainer" parent="." index="5"]
 visible = false

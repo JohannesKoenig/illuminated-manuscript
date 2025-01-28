@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MultiplicationModifier" load_steps=2 format=3 uid="uid://dbnh38tcwucfo"]
+
+[ext_resource type="Script" path="res://book/model/multiplication_modifier.gd" id="1_mc836"]
+
+[resource]
+script = ExtResource("1_mc836")
+multiplication_factor = 0.8
+modifier_name = "Harsh Winter"
+target_resource = "Food"
+target_value = "income"

@@ -278,3 +278,4 @@ resources = {
 }
 countryside_pages = Array[ExtResource("1_tdmpo")]([SubResource("Resource_thws2"), SubResource("Resource_peoar"), SubResource("Resource_puax0"), SubResource("Resource_em1du"), SubResource("Resource_bjdrc"), SubResource("Resource_vlqsg")])
 tasks = Array[ExtResource("22_rqwpt")]([ExtResource("23_8gtj0"), ExtResource("23_8gtj0"), ExtResource("23_8gtj0"), ExtResource("23_8gtj0"), ExtResource("23_gbuiy")])
+modifier = []

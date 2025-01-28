@@ -28,3 +28,10 @@ var content_element_prefab: ContentElementPrefab:
 			content_element_prefab = value
 			content_element_prefab_changed.emit(value)
 signal content_element_prefab_changed(content_element_prefab: ContentElementPrefab)
+
+var game_resource: GameResource:
+	set(value):
+		if game_resource != value:
+			game_resource = value
+			game_resource_changed.emit(value)
+signal game_resource_changed(game_resource: GameResource)

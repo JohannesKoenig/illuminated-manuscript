@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MultiplicationModifier" load_steps=2 format=3 uid="uid://chomd2i5xo5r0"]
+
+[ext_resource type="Script" path="res://book/model/multiplication_modifier.gd" id="1_vlnas"]
+
+[resource]
+script = ExtResource("1_vlnas")
+multiplication_factor = 0.7
+modifier_name = "Bark Beetle Infestation"
+target_resource = "Wood"
+target_value = "income"

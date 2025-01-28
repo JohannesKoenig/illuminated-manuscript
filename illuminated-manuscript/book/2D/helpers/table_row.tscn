@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://chxywhpqwfavv"]
+[gd_scene load_steps=5 format=3 uid="uid://chxywhpqwfavv"]
 
 [ext_resource type="Script" path="res://book/2D/helpers/table_row.gd" id="1_bcqpu"]
 [ext_resource type="Texture2D" uid="uid://u4emmvr7tb7q" path="res://assets/wood_icon.png" id="1_fcrw6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1jvcr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cuq5f"]
 
@@ -24,10 +26,14 @@ vertical_alignment = 1
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_cuq5f")
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1jvcr")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="ModifierLabel" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 
 [node name="IndicatorIcon" type="TextureRect" parent="HBoxContainer"]
@@ -62,3 +68,6 @@ theme_override_colors/font_color = Color(0.735637, 0, 0.0453997, 1)
 text = "-8"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
