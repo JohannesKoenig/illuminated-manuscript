@@ -8,3 +8,6 @@ func set_content_element(x: int, y: int, content_element: ContentElement):
 
 func has_element(x: int, y: int) -> bool:
 	return grid.has_value(x,y)
+
+func is_valid_index(x: int, y:int) -> bool:
+	return grid.is_valid_index(x,y)

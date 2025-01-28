@@ -52,3 +52,8 @@ func has_value(x: int, y: int)-> bool:
 	if index > len(self._content):
 		return false
 	return get_value(x, y) != null
+
+func is_valid_index(x: int, y: int) -> bool:
+	var x_valid = 0 <= x and x < get_width()
+	var y_valid = 0 <= y and y < get_height()
+	return x_valid and y_valid 

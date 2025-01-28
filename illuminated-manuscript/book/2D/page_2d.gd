@@ -27,6 +27,7 @@ func _process(delta):
 		var mouse_position_in_grid = mouse_position - content_element_grid_container.position
 		var grid_index = floor(	mouse_position_in_grid / Vector2(200, 200))
 		if (game_state.can_build(DragAndDropClipboard.selected_content_element_prefab.cost)
+			and page_content_resource.can_build(grid_index.x, grid_index.y, DragAndDropClipboard.selected_content_element_prefab)
 			and !content_element_grid_container.blocked_indices.has(Vector2(grid_index.x, grid_index.y))):
 			game_state.pay_for(DragAndDropClipboard.selected_content_element_prefab.cost)
 			page_content_resource.set_content_element(
