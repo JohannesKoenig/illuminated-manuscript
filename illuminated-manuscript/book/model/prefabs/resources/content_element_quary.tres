@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ContentElementPrefab" load_steps=2 format=3 uid="uid://cqfs08n10u870"]
+[gd_resource type="Resource" script_class="ContentElementPrefab" load_steps=3 format=3 uid="uid://cqfs08n10u870"]
 
 [ext_resource type="Script" path="res://book/model/content_element_prefab.gd" id="1_kpmu8"]
+[ext_resource type="Texture2D" uid="uid://c3yb5xthk8v5h" path="res://assets/quary_1.png" id="2_yjb7n"]
 
 [resource]
 script = ExtResource("1_kpmu8")
 name = "content_element_quary"
 size = Vector2i(2, 2)
+texture = ExtResource("2_yjb7n")
 income = {
 "stone": 20.0
 }

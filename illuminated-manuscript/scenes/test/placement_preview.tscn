@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0bfx0qw8wjbm"]
+
+[ext_resource type="Script" path="res://scenes/test/placement_preview.gd" id="1_76bw6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1f1ft"]
+bg_color = Color(0.8195, 0.623004, 0.466691, 1)
+
+[node name="PlacementPreview" type="Control"]
+visible = false
+modulate = Color(1, 1, 1, 0.352941)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_76bw6")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1f1ft")
+
+[node name="Image" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+stretch_mode = 2

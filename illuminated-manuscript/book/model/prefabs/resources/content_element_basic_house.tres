@@ -1,20 +1,22 @@
-[gd_resource type="Resource" script_class="ContentElementPrefab" load_steps=2 format=3 uid="uid://dwrukihrdeagq"]
+[gd_resource type="Resource" script_class="ContentElementPrefab" load_steps=3 format=3 uid="uid://dwrukihrdeagq"]
 
 [ext_resource type="Script" path="res://book/model/content_element_prefab.gd" id="1_xu7sx"]
+[ext_resource type="Texture2D" uid="uid://jwps1u5g6yit" path="res://assets/basic_house_1.png" id="2_s0wkd"]
 
 [resource]
 script = ExtResource("1_xu7sx")
 name = "content_element_basic_house"
 size = Vector2i(1, 1)
+texture = ExtResource("2_s0wkd")
 income = {
 "coin": 4,
-"population": 2
+"population": 4
 }
 usage = {
 "clothes": 1,
-"fire wood": 5,
+"fire wood": 3,
 "food": 10
 }
 cost = {
-"wood": 100
+"wood": 80
 }

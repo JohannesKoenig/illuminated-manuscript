@@ -18,13 +18,22 @@ func initialize(x: int, y: int):
 	self._content.fill(null)
 
 func put_value(x: int, y: int, value):
+	var index = x * self._x + y
+	if index > len(self._content):
+		return
 	self._content[x * self._x + y] = value
 	array_content_updated.emit()
 
 func get_value(x: int, y: int):
+	var index = x * self._x + y
+	if index > len(self._content):
+		return
 	return self._content[y * self._x + x]
 
 func delete_value(x: int, y: int):
+	var index = x * self._x + y
+	if index > len(self._content):
+		return
 	put_value(x, y, null)
 	array_content_updated.emit()
 
@@ -37,3 +46,9 @@ func get_width() -> int:
 	
 func get_height() -> int:
 	return _y
+
+func has_value(x: int, y: int)-> bool:
+	var index = x * self._x + y
+	if index > len(self._content):
+		return false
+	return get_value(x, y) != null

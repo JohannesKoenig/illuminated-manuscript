@@ -7,6 +7,7 @@ extends Node3D
 @onready var current_page_r: Page = $CurrentPageR
 @onready var next_page: Page = $NextPage
 @onready var sun = $DirectionalLight3D
+@onready var page_turn_audio_stream_player = $PageTurnAudioStreamPlayer
 
 
 @onready var right_drag_start_area_3d = $RightDragStartArea3D
@@ -78,10 +79,12 @@ func _process(delta):
 	var progress_from_right = clamp(dist_from_right / max_dist, 0.01, 0.99)
 	if Input.is_action_just_pressed("Dragging"):
 		if _mouse_in_left_drag_area:
-			_left_dragging = true
+			_left_dragging = true	
+			page_turn_audio_stream_player.play()
 			_was_dragging_l = true
 		if _mouse_in_right_drag_area:
 			_right_dragging = true
+			page_turn_audio_stream_player.play()
 			_was_dragging_r = true
 	if Input.is_action_just_released("Dragging"):
 		_left_dragging = false

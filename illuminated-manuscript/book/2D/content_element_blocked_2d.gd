@@ -1,1 +1,1 @@
-class_name ContentElementClocked2D extends Control
+class_name ContentElementBlocked2D extends Control

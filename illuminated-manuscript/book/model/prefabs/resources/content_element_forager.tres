@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ContentElementPrefab" load_steps=2 format=3 uid="uid://cg6fd1pvesxt4"]
+[gd_resource type="Resource" script_class="ContentElementPrefab" load_steps=3 format=3 uid="uid://cg6fd1pvesxt4"]
 
 [ext_resource type="Script" path="res://book/model/content_element_prefab.gd" id="1_elen5"]
+[ext_resource type="Texture2D" uid="uid://c2l7bi1anv1pi" path="res://assets/forager_1.png" id="2_ueglj"]
 
 [resource]
 script = ExtResource("1_elen5")
 name = "content_element_forager"
 size = Vector2i(1, 2)
+texture = ExtResource("2_ueglj")
 income = {
 "fibre": 10,
 "fire wood": 5,

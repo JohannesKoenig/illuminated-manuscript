@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GameState" load_steps=57 format=3 uid="uid://hw6gm0460xea"]
+[gd_resource type="Resource" script_class="GameState" load_steps=63 format=3 uid="uid://hw6gm0460xea"]
 
 [ext_resource type="Texture2D" uid="uid://u4emmvr7tb7q" path="res://assets/wood_icon.png" id="1_qmlem"]
 [ext_resource type="Script" path="res://logic/game_state.gd" id="1_rkl6h"]
@@ -21,9 +21,12 @@
 [ext_resource type="Texture2D" uid="uid://c2j87oiaeyxeb" path="res://assets/fabric_icon.png" id="13_eoa5s"]
 [ext_resource type="Texture2D" uid="uid://b5eqpb75jhhcn" path="res://assets/population_icon.png" id="19_m6r1v"]
 [ext_resource type="Texture2D" uid="uid://delgi4wcs65o5" path="res://assets/coin_icon.png" id="20_yynnx"]
+[ext_resource type="Texture2D" uid="uid://cwmarfypnl1yy" path="res://assets/clay_icon.png" id="21_t14hi"]
+[ext_resource type="Texture2D" uid="uid://8t4lfqtcllnd" path="res://assets/pottery_icon.png" id="22_obna2"]
 [ext_resource type="Script" path="res://logic/task.gd" id="22_rqwpt"]
 [ext_resource type="Resource" uid="uid://blitryd6lrpfd" path="res://logic/resources/king_food_task.tres" id="23_8gtj0"]
 [ext_resource type="Resource" uid="uid://cgnfk17qplqge" path="res://logic/resources/found_food_forrest.tres" id="23_gbuiy"]
+[ext_resource type="Texture2D" uid="uid://cqjcn4i4cv4px" path="res://assets/tools_icon.png" id="23_sjgm7"]
 
 [sub_resource type="Resource" id="Resource_n4bxk"]
 script = ExtResource("2_i3hoj")
@@ -123,6 +126,14 @@ count = 0
 income = 0
 usage = 0
 
+[sub_resource type="Resource" id="Resource_op7r2"]
+script = ExtResource("2_1erfy")
+name = "Clay"
+icon = ExtResource("21_t14hi")
+count = 0
+income = 0
+usage = 0
+
 [sub_resource type="Resource" id="Resource_t70mx"]
 script = ExtResource("2_1erfy")
 name = "Cloth"
@@ -135,7 +146,7 @@ usage = 0
 script = ExtResource("2_1erfy")
 name = "Clothes"
 icon = ExtResource("12_xvqtk")
-count = 40
+count = 60
 income = 0
 usage = 0
 
@@ -203,6 +214,14 @@ count = 10
 income = 0
 usage = 0
 
+[sub_resource type="Resource" id="Resource_53w2g"]
+script = ExtResource("2_1erfy")
+name = "Pottery"
+icon = ExtResource("22_obna2")
+count = 0
+income = 0
+usage = 0
+
 [sub_resource type="Resource" id="Resource_a8bho"]
 script = ExtResource("2_1erfy")
 name = "Rope"
@@ -215,6 +234,14 @@ usage = 0
 script = ExtResource("2_1erfy")
 name = "Stone"
 icon = ExtResource("5_eplvc")
+count = 0
+income = 0
+usage = 0
+
+[sub_resource type="Resource" id="Resource_eu5ar"]
+script = ExtResource("2_1erfy")
+name = "Tools"
+icon = ExtResource("23_sjgm7")
 count = 0
 income = 0
 usage = 0
@@ -232,6 +259,7 @@ script = ExtResource("1_rkl6h")
 year = 1
 resources = {
 "char coal": SubResource("Resource_17d42"),
+"clay": SubResource("Resource_op7r2"),
 "cloth": SubResource("Resource_t70mx"),
 "clothes": SubResource("Resource_qqtek"),
 "coin": SubResource("Resource_invew"),
@@ -242,8 +270,10 @@ resources = {
 "iron ore": SubResource("Resource_7otvw"),
 "leather": SubResource("Resource_8f3qg"),
 "population": SubResource("Resource_p0ba1"),
+"pottery": SubResource("Resource_53w2g"),
 "rope": SubResource("Resource_a8bho"),
 "stone": SubResource("Resource_ua5xu"),
+"tools": SubResource("Resource_eu5ar"),
 "wood": SubResource("Resource_gs78w")
 }
 countryside_pages = Array[ExtResource("1_tdmpo")]([SubResource("Resource_thws2"), SubResource("Resource_peoar"), SubResource("Resource_puax0"), SubResource("Resource_em1du"), SubResource("Resource_bjdrc"), SubResource("Resource_vlqsg")])

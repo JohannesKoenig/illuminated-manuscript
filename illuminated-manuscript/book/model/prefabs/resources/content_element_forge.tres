@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ContentElementPrefab" load_steps=3 format=3 uid="uid://dq6mhia4mbw2e"]
+
+[ext_resource type="Script" path="res://book/model/content_element_prefab.gd" id="1_0u3h1"]
+[ext_resource type="Texture2D" uid="uid://b2debqrqp6lpm" path="res://assets/forge_1.png" id="2_sabkg"]
+
+[resource]
+script = ExtResource("1_0u3h1")
+name = "content_element_forge"
+size = Vector2i(2, 1)
+texture = ExtResource("2_sabkg")
+income = {
+"tools": 12
+}
+usage = {
+"clay": 10,
+"iron_ore": 25,
+"population": 3,
+"wood": 40
+}
+cost = {
+"clay": 100,
+"stone": 100,
+"wood": 180
+}

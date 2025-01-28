@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ContentElementPrefab" load_steps=3 format=3 uid="uid://bs4805ah8l24q"]
+
+[ext_resource type="Script" path="res://book/model/content_element_prefab.gd" id="1_4s2ne"]
+[ext_resource type="Texture2D" uid="uid://3cnwnxwnaeeo" path="res://assets/claY_mine.png" id="2_updrb"]
+
+[resource]
+script = ExtResource("1_4s2ne")
+name = "content_element_clay_mine"
+size = Vector2i(3, 1)
+texture = ExtResource("2_updrb")
+income = {
+"clay": 15
+}
+usage = {
+"population": 3
+}
+cost = {
+"stone": 25,
+"wood": 100
+}

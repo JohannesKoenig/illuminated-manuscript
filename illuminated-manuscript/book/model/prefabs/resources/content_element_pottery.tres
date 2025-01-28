@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="ContentElementPrefab" load_steps=3 format=3 uid="uid://btq8vysuhwsjo"]
+
+[ext_resource type="Script" path="res://book/model/content_element_prefab.gd" id="1_vceen"]
+[ext_resource type="Texture2D" uid="uid://b2f15owhetasd" path="res://assets/pottery.png" id="2_rt35v"]
+
+[resource]
+script = ExtResource("1_vceen")
+name = "content_element_pottery"
+size = Vector2i(1, 2)
+texture = ExtResource("2_rt35v")
+income = {
+"pottery": 5
+}
+usage = {
+"clay": 9,
+"population": 2,
+"wood": 20
+}
+cost = {
+"stone": 50,
+"wood": 190
+}

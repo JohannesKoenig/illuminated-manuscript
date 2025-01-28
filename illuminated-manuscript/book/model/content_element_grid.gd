@@ -5,3 +5,6 @@ class_name ContentElementGrid extends Resource
 
 func set_content_element(x: int, y: int, content_element: ContentElement):
 	grid.put_value(x, y, content_element)
+
+func has_element(x: int, y: int) -> bool:
+	return grid.has_value(x,y)

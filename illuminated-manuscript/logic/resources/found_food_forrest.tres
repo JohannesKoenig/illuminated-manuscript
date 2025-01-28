@@ -8,4 +8,4 @@ gifts = {
 "food": 20
 }
 task_name = "Your wood cutters found some food"
-task_description = "While felling the requested trees your workers found some access food to distribute."
+task_description = "While felling the requested trees your workers found some berries and mushrooms to distribute amongst the townsfolk."

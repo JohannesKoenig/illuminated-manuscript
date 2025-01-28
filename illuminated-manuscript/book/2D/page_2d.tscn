@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dedyg7lu2i37l"]
+[gd_scene load_steps=8 format=3 uid="uid://dedyg7lu2i37l"]
 
 [ext_resource type="Script" path="res://book/2D/page_2d.gd" id="1_k4lbg"]
 [ext_resource type="Script" path="res://book/2D/content_element_grid_container.gd" id="3_4m0nv"]
+[ext_resource type="AudioStream" uid="uid://4ar4iutoj3mp" path="res://assets/scribble.mp3" id="3_kdt1c"]
 
 [sub_resource type="Gradient" id="Gradient_a3lb6"]
 offsets = PackedFloat32Array(0.935065, 1)
@@ -20,6 +21,8 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_r1omc"]
 gradient = SubResource("Gradient_p0sib")
+width = 10
+height = 10
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
@@ -64,12 +67,18 @@ offset_right = 412.0
 offset_bottom = 715.0
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "test"
+mouse_filter = 1
 script = ExtResource("3_4m0nv")
 
 [node name="MousePointerShadow" type="TextureRect" parent="."]
 offset_left = -128.0
 offset_top = -251.0
-offset_right = -64.0
-offset_bottom = -187.0
+offset_right = -118.0
+offset_bottom = -241.0
 pivot_offset = Vector2(32, 32)
 texture = SubResource("GradientTexture2D_r1omc")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kdt1c")
+volume_db = -20.0

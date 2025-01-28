@@ -3,7 +3,7 @@ class_name ContentElementResourceOverview extends ContentElementGroup2D
 @onready var game_state: GameState = preload("res://logic/resources/game_state.tres")
 @onready var label = $Label
 @onready var table_row: PackedScene = preload("res://book/2D/helpers/table_row.tscn")
-@onready var v_box_container = $VBoxContainer
+@onready var v_box_container = $VBoxContainer2
 
 
 func _ready():

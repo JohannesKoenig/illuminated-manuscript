@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ContentElementPrefab" load_steps=2 format=3 uid="uid://dn3ttuxsalsa0"]
+[gd_resource type="Resource" script_class="ContentElementPrefab" load_steps=3 format=3 uid="uid://dn3ttuxsalsa0"]
 
 [ext_resource type="Script" path="res://book/model/content_element_prefab.gd" id="1_a70tg"]
+[ext_resource type="Texture2D" uid="uid://2xw1tw3b6l71" path="res://assets/tailor.png" id="2_pud8o"]
 
 [resource]
 script = ExtResource("1_a70tg")
 name = "content_element_tailor"
 size = Vector2i(3, 1)
+texture = ExtResource("2_pud8o")
 income = {
 "clothes": 5
 }

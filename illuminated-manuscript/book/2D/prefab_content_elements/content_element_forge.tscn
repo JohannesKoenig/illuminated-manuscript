@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjuliq2ydedob"]
+
+[ext_resource type="PackedScene" uid="uid://coq16jp6h2epi" path="res://book/2D/content_element_group_2d.tscn" id="1_nc3vx"]
+[ext_resource type="Texture2D" uid="uid://b1r2ms52ld1xr" path="res://icon.svg" id="2_s0ios"]
+
+[node name="ContentElementGroup2D" instance=ExtResource("1_nc3vx")]
+offset_right = -1520.0
+offset_bottom = -880.0
+
+[node name="TextureRect" parent="." index="0"]
+custom_minimum_size = Vector2(400, 200)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Heading" type="Label" parent="VBoxContainer" index="0"]
+layout_mode = 2
+text = "Heading"
+
+[node name="Image" type="TextureRect" parent="VBoxContainer" index="1"]
+layout_mode = 2
+texture = ExtResource("2_s0ios")

@@ -1,6 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://coq16jp6h2epi"]
+[gd_scene load_steps=9 format=3 uid="uid://coq16jp6h2epi"]
 
 [ext_resource type="Script" path="res://book/2D/content_element_group_2d.gd" id="1_q8wgm"]
+
+[sub_resource type="Curve" id="Curve_xao7c"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.98939, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_77p6l"]
+curve = SubResource("Curve_xao7c")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mw3je"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 136.37
+initial_velocity_max = 136.37
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_77p6l")
+
+[sub_resource type="Gradient" id="Gradient_fkgoo"]
+colors = PackedColorArray(0.928279, 0.80807, 0.735317, 0.25098, 0.929412, 0.807843, 0.737255, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nxubv"]
+gradient = SubResource("Gradient_fkgoo")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_rlcv4"]
 offsets = PackedFloat32Array(0.853448, 0.946121, 1)
@@ -14,16 +39,61 @@ fill_to = Vector2(1, 0.5)
 metadata/_snap_enabled = true
 
 [node name="ContentElementGroup2D" type="Control"]
+y_sort_enabled = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "test"
 script = ExtResource("1_q8wgm")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Control"]
+emitting = false
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_mw3je")
+texture = SubResource("GradientTexture2D_nxubv")
+one_shot = true
+explosiveness = 1.0
+
+[node name="Background" type="TextureRect" parent="."]
+y_sort_enabled = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+tooltip_text = "test"
 texture = SubResource("GradientTexture2D_vnp30")
+
+[node name="Image" type="TextureRect" parent="."]
+y_sort_enabled = true
+layout_mode = 2
+offset_right = 40.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Heading" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

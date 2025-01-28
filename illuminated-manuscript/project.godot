@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 
 GameLogic="*res://logic/autoload/game_logic.gd"
 DragAndDropClipboard="*res://helpers/drag_and_drop_clipboard.gd"
+TooltipContentElementSystem="*res://helpers/tooltip_content_element_system.gd"
 
 [display]
 

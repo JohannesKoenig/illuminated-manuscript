@@ -19,6 +19,8 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_w1ma5"]
 gradient = SubResource("Gradient_blnef")
+width = 10
+height = 10
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
@@ -41,8 +43,8 @@ texture = SubResource("GradientTexture2D_k71v5")
 
 [node name="MousePointerShadow" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_right = 10.0
+offset_bottom = 10.0
 pivot_offset = Vector2(32, 32)
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_w1ma5")
@@ -70,9 +72,10 @@ offset_top = 760.0
 offset_right = 575.0
 offset_bottom = 817.0
 theme_override_font_sizes/font_size = 48
-text = "Accept"
+text = "Complete"
 
 [node name="Decline" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 808.0
 offset_top = 1472.0

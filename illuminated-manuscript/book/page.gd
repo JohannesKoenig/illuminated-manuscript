@@ -6,6 +6,8 @@ class_name Page extends Node3D
 @onready var right_page_rig: Node3D = $PageRig/RightPageRig
 @onready var collision_shape_3d = $PageRig/LeftPageRig/StaticBody3D/CollisionShape3D
 
+@export var left_page_up: bool
+
 signal mouse_entered
 signal mouse_exited
 var mouse_inside: bool = false
@@ -189,3 +191,24 @@ func raycast_from_mouse():
 	var query = PhysicsRayQueryParameters3D.create(ray_start, ray_end)
 	
 	return space_state.intersect_ray(query)
+
+func _unhandled_input(event: InputEvent):
+	if not mouse_inside:
+		return
+	var event_copy = event.duplicate()
+	var result = raycast_from_mouse()
+	if result != null:
+		if result.has("position"):
+			var mouse_position_3D = result["position"]
+			var unscaled = (mouse_position_3D - left_side.global_position)
+			var unscaled_2d = Vector2(unscaled.x, unscaled.z)
+			var relative_position = unscaled_2d / base_mesh.size
+			var absolute_position = relative_position * Vector2(left_viewport.size)
+			var camera_offset = left_viewport.size / 2.0
+			if !event is InputEventPanGesture and ! event is InputEventKey:
+				event_copy.global_position = absolute_position + camera_offset
+				event_copy.position = absolute_position + camera_offset
+	if left_page_up:
+		left_viewport.push_input(event_copy)
+	else:
+		right_viewport.push_input(event_copy.duplicate())

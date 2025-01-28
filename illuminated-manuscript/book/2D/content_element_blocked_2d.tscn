@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" path="res://book/2D/content_element_blocked_2d.gd" id="1_tpyq8"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0mnb"]
-bg_color = Color(1, 0.325754, 0.396947, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jofl0"]
 
 [node name="ContentElementBlocked2d" type="Control"]
 layout_mode = 3
@@ -20,4 +19,4 @@ script = ExtResource("1_tpyq8")
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 200.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_g0mnb")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jofl0")

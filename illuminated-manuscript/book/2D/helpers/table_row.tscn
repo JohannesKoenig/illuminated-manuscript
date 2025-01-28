@@ -6,6 +6,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cuq5f"]
 
 [node name="TableRow" type="HBoxContainer"]
+size_flags_horizontal = 3
 script = ExtResource("1_bcqpu")
 
 [node name="IconTexture" type="TextureRect" parent="."]
